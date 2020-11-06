@@ -8,7 +8,6 @@ import config from './config';
 function BotApp() {
   return (
     <div className="BotApp">
-      <h1>Bot Page</h1>
       <Chatbot
         config={config}
         actionProvider={ActionProvider}

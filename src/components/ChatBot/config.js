@@ -4,9 +4,12 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 import SupportOptions from './SupportOptions/SupportOptions';
 import LinkList from './LinkList/LinkList';
 
+const botName = "CalmrBot";
+
 const config = {
+  botName: botName,
   initialMessages: [
-    createChatBotMessage("Hi, I'm here to help. What what would you like help with?", {
+    createChatBotMessage(`Hello, I'm ${botName}. What what would you like help with?`, {
       widget: "supportOptions",
     }),
   ],
