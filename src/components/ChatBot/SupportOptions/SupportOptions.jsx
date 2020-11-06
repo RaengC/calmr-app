@@ -4,7 +4,11 @@ import './SupportOptions.css';
 
 const SupportOptions = (props) => {
   const options = [
-    {text: "Meditation", handler: () => {}, id: 1},
+    {
+      text: "Meditation",
+      handler: props.actionProvider.handleMeditationList, 
+      id: 1
+    },
     {text: "Mindfullness", handler: () => {}, id: 2},
     {text: "Breathing", handler: () => {}, id: 3},
     {text: "Creative Outlets", handler: () => {}, id: 4},
