@@ -4,20 +4,38 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 import SupportOptions from './SupportOptions/SupportOptions';
 import LinkList from './LinkList/LinkList';
 
+import ActionProvider from './ActionProvider'
+import MessageParser from './MessageParser';
+
 const botName = "CalmrBot";
 
 const config = {
   botName: botName,
+
   initialMessages: [
-    createChatBotMessage(`Hello, I'm ${botName}. What what would you like help with?`, {
-      widget: "supportOptions",
-    }),
+    createChatBotMessage(
+      `Hi, I'm ${botName}. I'm here to help you nagivate this site.`
+    ),
+    createChatBotMessage(
+      `What would you like help with?`,
+      {
+        delay: 600,
+        widget: "supportOptions",
+      }
+    )
   ],
+
+  state: {
+    gist: "",
+  },
+  customComponents: {},
 
   widgets: [
     {
       widgetName: "supportOptions",
-      widgetFunc: (props) => <SupportOptions {...props} />
+      widgetFunc: (props) => <SupportOptions {...props} />,
+      mapStateToProps: ["gist"],
+      props: {}
     },
     {
       widgetName: "meditationLinks",

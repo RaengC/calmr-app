@@ -1,20 +1,25 @@
 class MessageParser {
-  constructor(actionProvider) {
+  constructor(actionProvider, state) {
     this.actionProvider = actionProvider;
+    this.state = state;
   }
 
   parse(message) {
     // console.log(message);
-    const lowerCaseMessage = message.toLowerCase();
+    const lowerCase = message.toLowerCase();
 
-    if (lowerCaseMessage.includes("hello")) {
-      this.actionProvider.greet();
-    }
+    // define search term and variables of search term here
+    let checkMeditation =["meditation", "medit", "meditations"];
 
-    if (lowerCaseMessage.includes("meditation")) {
-      this.actionProvider.handleMeditationList();
+    if (lowerCase.includes("hello")) {
+      return this.actionProvider.greet();
+    };
+
+    if (checkMeditation.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleMeditationList();
     }
-  }
+    return this.actionProvider.handleDefault()
+  };
 }
 
 export default MessageParser;
