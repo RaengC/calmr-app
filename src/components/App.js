@@ -2,6 +2,8 @@ import React from 'react';
 
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
+import ArticleDisplay from './Articles/ArticleDisplay';
+import SavedArticles from './Articles/SavedArticles';
 import Test from './Test'
 
 function App() {
@@ -9,7 +11,8 @@ function App() {
     <div className="App">
       <JournalLanding />
       <BotApp />
-      <Test />
+      <ArticleDisplay/>
+      <SavedArticles/>
 
     </div>
   );

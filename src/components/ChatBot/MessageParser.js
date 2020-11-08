@@ -11,7 +11,7 @@ class MessageParser {
     // define search term and variables of search term here
     let supportOptions =["main menu", "main", "start", "beginning", "options"]
     let checkMeditation =["meditation", "medit", "meditations"];
-    let checkMindfullness =["mindfullness"];
+    let checkMindfullness =["mindfullness", "mindful", "western meditation"];
     let checkBreathing =["breathing", "breath", "breathe"];
     let checkCreative =["creative outlets", "create", "art", "creative"];
     let checkAnxiety =["anxiety", "stress", "anxious", "stress help"];
