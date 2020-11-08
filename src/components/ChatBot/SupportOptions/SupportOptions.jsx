@@ -10,10 +10,22 @@ const SupportOptions = (props) => {
       handler: props.actionProvider.handleMeditationList,
       id: 1
     },
-    {text: "Mindfullness", handler: () => {}, id: 2},
-    {text: "Breathing", handler: () => {}, id: 3},
-    {text: "Creative Outlets", handler: () => {}, id: 4},
-    {text: "Anxiety Resources", handler: () => {}, id: 5},
+    {
+      text: "Mindfullness",
+      handler: props.actionProvider.handleMindfullnessList,
+      id: 2},
+    {
+      text: "Breathing",
+      handler: () => {},
+      id: 3},
+    {
+      text: "Creative Outlets",
+      handler: () => {},
+      id: 4},
+    {
+      text: "Anxiety Resources",
+      handler: () => {},
+      id: 5},
   ];
 
   const optionsMarkup = options.map((option) => (

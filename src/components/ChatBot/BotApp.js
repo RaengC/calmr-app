@@ -11,7 +11,8 @@ function BotApp() {
       <Chatbot
         config={config}
         actionProvider={ActionProvider}
-        messageParser={MessageParser}/>
+        messageParser={MessageParser}
+      />
     </div>
   );
 }

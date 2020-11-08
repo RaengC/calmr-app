@@ -10,6 +10,7 @@ class MessageParser {
 
     // define search term and variables of search term here
     let checkMeditation =["meditation", "medit", "meditations"];
+    let checkMindfullness =["mindfullness"]
 
     if (lowerCase.includes("hello")) {
       return this.actionProvider.greet();
@@ -17,7 +18,12 @@ class MessageParser {
 
     if (checkMeditation.some((item) => lowerCase.includes(item))) {
       return this.actionProvider.handleMeditationList();
-    }
+    };
+
+    if (checkMindfullness.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleMindfullnessList();
+    };
+    
     return this.actionProvider.handleDefault()
   };
 }

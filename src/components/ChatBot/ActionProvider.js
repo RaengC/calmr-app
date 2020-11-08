@@ -9,6 +9,14 @@ class ActionProvider {
     this.updateChatbotState(greetingMessage)
   };
 
+  // default message for any text typed.
+  handleDefault = () => {
+    const message = this.createChatBotMessage("How can I help?", {
+      withAvatar: true,
+    });
+    this.updateChatbotState(message)
+  };
+
   handleMeditationList = () => {
     const message = this.createChatBotMessage(
       "Wonderful, I have the following meditations you can try:",
@@ -20,13 +28,16 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
-  handleDefault = () => {
-    const message = this.createChatBotMessage("How can I help?", {
-      withAvatar: true,
-    });
-    this.updateChatbotState(message)
-  };
-
+  handleMindfullnessList = () => {
+    const message = this.createChatBotMessage(
+      "Wonderful, mindfullness:",
+      {
+        widget: "mindfullnessLinks",
+        withAvatar: true
+      }
+    );
+    this.updateChatbotState(message);
+  }
 
   updateChatbotState = (messages) => {
     if (Array.isArray(messages)) {
