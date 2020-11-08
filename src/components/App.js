@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1>Calmr App</h1>
       <BotApp />
-      <Test />
+
 
     </div>
   );
