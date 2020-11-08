@@ -4,9 +4,10 @@ import './SupportOptions.css';
 
 const SupportOptions = (props) => {
   const options = [
+    // text name are the paramaters displayed on the DOM
     {
       text: "Meditation",
-      handler: props.actionProvider.handleMeditationList, 
+      handler: props.actionProvider.handleMeditationList,
       id: 1
     },
     {text: "Mindfullness", handler: () => {}, id: 2},
