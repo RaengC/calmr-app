@@ -1,26 +1,23 @@
 import React from 'react';
-import LinkList from '../LinkList/LinkList'
 
-const MeditationWidget = (props) => {
+const AnxietyWidget = (props) => {
   const options = [
     {
-      text: "Guided Meditation",
-      url:
-        "https://www.tarabrach.com/?powerpress_pinw=11174-podcast",
+      text: "Breathing to Stop Anxiety Attack",
+      url: "https://youtu.be/vXZ5l7G6T2I",
       id: 1,
     },
     {
-      text: "Loving This Life - Happiness",
-      url: "https://www.tarabrach.com/?powerpress_pinw=2512-podcast",
+      text: "Anxiety 2",
+      url: "",
       id: 2,
     },
     {
-      text: "5-min Meditation",
-      url: "https://youtu.be/inpok4MKVLM",
+      text: "Anxiety 3",
+      url: "",
       id: 3,
     },
   ];
-
   const optionsMarkup = options.map((option) => (
     <li key={option.id} className="link-list">
       <a
@@ -36,4 +33,5 @@ const MeditationWidget = (props) => {
 
   return <ul className="link-list">{optionsMarkup}</ul>;
 }
-export default MeditationWidget;
+
+export default AnxietyWidget;

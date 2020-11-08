@@ -9,22 +9,37 @@ class MessageParser {
     const lowerCase = message.toLowerCase();
 
     // define search term and variables of search term here
+    let supportOptions =["main menu", "main", "start", "beginning", "options"]
     let checkMeditation =["meditation", "medit", "meditations"];
-    let checkMindfullness =["mindfullness"]
+    let checkMindfullness =["mindfullness"];
+    let checkBreathing =["breathing", "breath", "breathe"];
+    let checkCreative =["creative outlets", "create", "art", "creative"];
+    let checkAnxiety =["anxiety", "stress", "anxious", "stress help"];
 
     if (lowerCase.includes("hello")) {
       return this.actionProvider.greet();
     };
-
+    // return to main menu
+    if (supportOptions.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleSupportOptions();
+    }
+    // Lists of broad options
     if (checkMeditation.some((item) => lowerCase.includes(item))) {
       return this.actionProvider.handleMeditationList();
     };
-
     if (checkMindfullness.some((item) => lowerCase.includes(item))) {
       return this.actionProvider.handleMindfullnessList();
     };
-    
-    return this.actionProvider.handleDefault()
+    if (checkBreathing.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleBreathingList();
+    };
+    if (checkCreative.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleCreativeList();
+    };
+    if (checkAnxiety.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleAnxietyList();
+    }
+    return this.actionProvider.handleDefault();
   };
 }
 

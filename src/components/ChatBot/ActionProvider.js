@@ -17,6 +17,18 @@ class ActionProvider {
     this.updateChatbotState(message)
   };
 
+  // get back to main options
+  handleSupportOptions = () => {
+    const message = this.createChatBotMessage(
+      `What would you like help with?`,
+      {
+        widget: "supportOptions",
+        withAvatar: true
+      }
+    )
+    this.updateChatbotState(message);
+  };
+
   handleMeditationList = () => {
     const message = this.createChatBotMessage(
       "Wonderful, I have the following meditations you can try:",
@@ -30,15 +42,50 @@ class ActionProvider {
 
   handleMindfullnessList = () => {
     const message = this.createChatBotMessage(
-      "Wonderful, mindfullness:",
+      "Wonderful, here are some resources on mindfullness:",
       {
         widget: "mindfullnessLinks",
         withAvatar: true
       }
     );
     this.updateChatbotState(message);
-  }
+  };
 
+  handleBreathingList = () => {
+    const message = this.createChatBotMessage(
+      "Breathing is the best! Here are some techniques:",
+      {
+        widget: "breathing",
+        withAvatar: true
+      }
+    );
+    this.updateChatbotState(message);
+  };
+
+  handleCreativeList = () => {
+    const message = this.createChatBotMessage(
+      "Some beautiful creative outlets are:",
+      {
+        widget: "creative",
+        withAvatar: true
+      }
+    );
+    this.updateChatbotState(message);
+  };
+
+  handleAnxietyList = () => {
+    const message = this.createChatBotMessage(
+      "Here are some resoures for axiety:",
+      {
+        widget: "anxiety",
+        withAvatar: true
+      }
+    );
+    this.updateChatbotState(message);
+  };
+
+
+  // update the ChatBot messages here
   updateChatbotState = (messages) => {
     if (Array.isArray(messages)) {
       this.setState((state) => ({

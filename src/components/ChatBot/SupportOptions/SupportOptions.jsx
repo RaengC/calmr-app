@@ -13,19 +13,23 @@ const SupportOptions = (props) => {
     {
       text: "Mindfullness",
       handler: props.actionProvider.handleMindfullnessList,
-      id: 2},
+      id: 2
+    },
     {
       text: "Breathing",
-      handler: () => {},
-      id: 3},
+      handler: props.actionProvider.handleBreathingList,
+      id: 3
+    },
     {
       text: "Creative Outlets",
-      handler: () => {},
-      id: 4},
+      handler: props.actionProvider.handleCreativeList,
+      id: 4
+    },
     {
       text: "Anxiety Resources",
-      handler: () => {},
-      id: 5},
+      handler: props.actionProvider.handleAnxietyList,
+      id: 5
+    },
   ];
 
   const optionsMarkup = options.map((option) => (
@@ -38,7 +42,6 @@ const SupportOptions = (props) => {
     </button>
   ));
   return <div className="support-options-container">{optionsMarkup}</div>;
-
-}
+};
 
 export default SupportOptions

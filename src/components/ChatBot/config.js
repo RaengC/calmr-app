@@ -5,8 +5,11 @@ import SupportOptions from './SupportOptions/SupportOptions';
 import LinkList from './LinkList/LinkList';
 import ActionProvider from './ActionProvider'
 import MessageParser from './MessageParser';
-import MindfullnessWidget from './Widgets/MindfullnessWidget'
-import MeditationWidget from './Widgets/MeditationWidget'
+import MindfullnessWidget from './Widgets/MindfullnessWidget';
+import MeditationWidget from './Widgets/MeditationWidget';
+import BreathingWidget from './Widgets/BreathingWidget';
+import CreativeWidget from './Widgets/CreativeWidget';
+import AnxietyWidget from './Widgets/AnxietyWidget';
 
 const botName = "CalmrBot";
 
@@ -44,7 +47,19 @@ const config = {
     },
     {
       widgetName: "mindfullnessLinks",
-      widgetFunc: (props) => <MindfullnessWidget {...props}/>,
+      widgetFunc: (props) => <MindfullnessWidget {...props} />,
+    },
+    {
+      widgetName: "breathing",
+      widgetFunc: (props) => <BreathingWidget {...props} />,
+    },
+    {
+      widgetName: "creative",
+      widgetFunc: (props) => <CreativeWidget {...props} />,
+    },
+    {
+      widgetName: "anxiety",
+      widgetFunc: (props) => <AnxietyWidget {...props} />,
     },
   ],
 

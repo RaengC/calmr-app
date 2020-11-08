@@ -1,23 +1,26 @@
 import React from 'react';
-import LinkList from '../LinkList/LinkList'
 
-const MeditationWidget = (props) => {
+const BreathingWidget = (props) => {
   const options = [
     {
-      text: "Guided Meditation",
-      url:
-        "https://www.tarabrach.com/?powerpress_pinw=11174-podcast",
+      text: "Breathing to Stop Anxiety Attack",
+      url: "https://youtu.be/vXZ5l7G6T2I",
       id: 1,
     },
     {
-      text: "Loving This Life - Happiness",
-      url: "https://www.tarabrach.com/?powerpress_pinw=2512-podcast",
+      text: "Moving Mandala Meditation",
+      url: "https://youtu.be/qZLO2EE_oKE",
       id: 2,
     },
     {
-      text: "5-min Meditation",
-      url: "https://youtu.be/inpok4MKVLM",
+      text: "Solfeggio Frequencies with visuals",
+      url: "https://youtu.be/goyZbut_KFY",
       id: 3,
+    },
+    {
+      text: "Mindful Breathing",
+      url: "https://youtu.be/nmFUDkj1Aq0",
+      id: 4,
     },
   ];
 
@@ -36,4 +39,5 @@ const MeditationWidget = (props) => {
 
   return <ul className="link-list">{optionsMarkup}</ul>;
 }
-export default MeditationWidget;
+
+export default BreathingWidget;
