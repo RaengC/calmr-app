@@ -1,12 +1,14 @@
 import React from 'react';
 
-import BotApp from './ChatBot/BotApp'
+import BotApp from './ChatBot/BotApp';
+import JournalLanding from './Journal/JournalLanding';
 
 function App() {
   return (
     <div className="App">
-      <h1>Calmr App</h1>
+      <JournalLanding />
       <BotApp />
+
     </div>
   );
 }

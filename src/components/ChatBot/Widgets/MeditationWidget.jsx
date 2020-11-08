@@ -19,6 +19,11 @@ const MeditationWidget = (props) => {
       url: "https://www.tarabrach.com/?powerpress_pinw=2458-podcast",
       id: 3,
     },
+    {
+      text: "Video to stop a panic attack",
+      url: "https://youtu.be/vXZ5l7G6T2I",
+      id: 4,
+    },
   ];
 
   const optionsMarkup = options.map((option) => (
