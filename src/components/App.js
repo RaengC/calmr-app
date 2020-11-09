@@ -74,7 +74,6 @@ function App() {
       </button>
 
 
-
     </div>
 
   );
@@ -92,7 +91,6 @@ function About() {
 
 function SavedArticlesLink() {
   return <div> <h2>Saved Articles</h2>;
-  <ArticleDisplay/>
   <SavedArticles/>
   </div>
 }
