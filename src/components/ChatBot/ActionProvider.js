@@ -84,6 +84,17 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
+  handleEmergencyList = () => {
+    const message = this.createChatBotMessage(
+      "If you need to talk to someone please use these resources:",
+      {
+        widget: "emergency",
+        withAvatar: true
+      }
+    );
+    this.updateChatbotState(message);
+  };
+
 
   // update the ChatBot messages here
   updateChatbotState = (messages) => {

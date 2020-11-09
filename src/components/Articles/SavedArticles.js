@@ -10,7 +10,8 @@ class SavedArticles extends Component {
   render () {
     return (
       <div>
-      {this.state.savedArticles.flat().map((article) =>  <p><a href="https://en.wikipedia.org/wiki/Yoga_nidra">{article.name}</a></p>)}
+        <h2>Saved Articles</h2>
+          {this.state.savedArticles.flat().map((article) =>  <p><a href="https://en.wikipedia.org/wiki/Yoga_nidra">{article.name}</a></p>)}
       </div>
     )
   }

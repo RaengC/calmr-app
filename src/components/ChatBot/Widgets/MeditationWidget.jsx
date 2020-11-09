@@ -5,9 +5,9 @@ import optionsMarkup from '../WidgetsList/OptionsMarkup';
 const MeditationWidget = (props) => {
   const options = [
     {
-      text: "Guided Meditation",
+      text: "Meditation Anywhere 5min",
       url:
-        "https://www.tarabrach.com/?powerpress_pinw=11174-podcast",
+        "https://youtu.be/inpok4MKVLM",
       id: 1,
     },
     {

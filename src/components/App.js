@@ -10,105 +10,71 @@ import {
 
 import Chatbot from 'react-chatbot-kit'
 import { ConditionallyRender } from "react-util-kit";
+import WidgetHome from './ChatBot/Widgets/WidgetHome'
 
 
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
 import ArticleDisplay from './Articles/ArticleDisplay';
-import SavedArticles from './Articles/SavedArticles';
-import User from         './Users/User'
+import SavedArticles from  './Articles/SavedArticles';
+import Navigation from     './Navigation/Navigation';
+import Registration from   './Users/auth/Registration'
+import User from './Users/User'
+import About from './Journal/About'
 
-import { ReactComponent as ButtonIcon } from "./Assets/lotus-flower.png";
+import logo from "./Assets/lotus-flower.png";
 
 import '../App.css';
 
 function App() {
-  const [showChatBot, toggleChatbot] = useState(true);
+  const [showChatBot, toggleChatbot] = useState(false);
 
+  // const logo = require('./Assets/lotus-flower.png');
   return (
-    <div className="App">
-
     <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/savedarticles">Saved Articles</Link>
-          </li>
-          <li>
-            <Link to="/login">Login/SignIn</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navigation />
+        <div className="App">
+          <div>
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+              <Switch>
+                <Route path="/login">
+                  <User />
+                </Route>
+                <Route path="/createAccount">
+                  <Registration />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/savedarticles">
+                  <SavedArticles />
+                </Route>
+                <Route path="/">
+                  <JournalLanding />
+                </Route>
+              </Switch>
+          </div>
 
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/savedarticles">
-          <SavedArticlesLink />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+          <div className="app-chatbot-container">
+            <ConditionallyRender
+              ifTrue={showChatBot}
+              show={ <BotApp /> }
+            />
+          </div>
 
-      </Switch>
-    </div>
-  </Router>
+          <button
+            className="app-chatbot-button">
+            <img
+              className="logo"
+              src={logo}
+              onClick={() => toggleChatbot((prev) => !prev)} />
+          </button>
 
-
-      <div className="app-chatbot-container">
-        <ConditionallyRender
-          ifTrue={showChatBot}
-          show={ <BotApp /> }
-        />
-      </div>
-
-      <button
-        className="app-chatbot-button">
-        <img
-
-          src={require('./Assets/lotus-flower.png')}
-          onClick={() => toggleChatbot((prev) => !prev)} />
-      </button>
-
-
-    </div>
-
+        </div>
+    </Router>
   );
 }
 
-function Home() {
-  return <div> <h2>Home</h2>
-  <JournalLanding />
-  </div>
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function SavedArticlesLink() {
-  return <div> <h2>Saved Articles</h2>;
-  <SavedArticles/>
-  </div>
-}
-
-function Login() {
-  return <div><h2>Log in</h2>
-  <User />
-  </div>
-}
 
 export default App;

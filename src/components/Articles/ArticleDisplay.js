@@ -8,7 +8,7 @@ class ArticleDisplay extends Component {
   constructor() {
     super()
     this.state = {
-      
+
       articleName: 'Yoga Nidra',
       articleBody: 'Around the room, faces relax, jaws soften, and soon snores start to rumble as the men drop deeper into relaxation.',
       allComments: ['hi', 'there']
@@ -31,6 +31,7 @@ class ArticleDisplay extends Component {
         <li>{comment}</li>
       )}
       </ul>
+
       </div>
 
     )
