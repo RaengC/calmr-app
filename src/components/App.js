@@ -10,6 +10,7 @@ import {
 
 import Chatbot from 'react-chatbot-kit'
 import { ConditionallyRender } from "react-util-kit";
+import WidgetHome from './ChatBot/Widgets/WidgetHome'
 
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';

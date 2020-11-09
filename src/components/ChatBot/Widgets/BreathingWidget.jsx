@@ -28,5 +28,8 @@ const BreathingWidget = (props) => {
 
   return <ul className="link-list">{optionsMarkup(options)}</ul>;
 }
+}
+
+
 
 export default BreathingWidget;
