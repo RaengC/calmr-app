@@ -15,6 +15,7 @@ import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
 import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from './Articles/SavedArticles';
+import User from         './Users/User'
 
 import { ReactComponent as ButtonIcon } from "./Assets/lotus-flower.png";
 
@@ -38,12 +39,18 @@ function App() {
           <li>
             <Link to="/savedarticles">Saved Articles</Link>
           </li>
+          <li>
+            <Link to="/User">Login/SignIn</Link>
+          </li>
         </ul>
       </nav>
 
       {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
       <Switch>
+        <Route path="/Users">
+          <User />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
@@ -53,6 +60,7 @@ function App() {
         <Route path="/">
           <Home />
         </Route>
+
       </Switch>
     </div>
   </Router>
