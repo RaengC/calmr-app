@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import './LinkList.css';
+// import './WidgetList/LinkList.css';
 
 const _handleClick = (e) => {
   e.preventDefault()
