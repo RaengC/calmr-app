@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LinkList from '../LinkList/LinkList'
+import optionsMarkup from '../WidgetsList/OptionsMarkup';
 
 const MindfullnessWidget = (props) => {
   const options = [
@@ -24,21 +24,7 @@ const MindfullnessWidget = (props) => {
     },
   ];
 
-
-  const optionsMarkup = options.map((option) => (
-    <li key={option.id} className="link-list">
-      <a
-        href={option.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="link-list-item-url"
-      >
-        {option.text}
-      </a>
-    </li>
-  ));
-
-  return <ul className="link-list">{optionsMarkup}</ul>;
+  return <ul className="link-list">{optionsMarkup(options)}</ul>;
 
 }
 export default MindfullnessWidget;

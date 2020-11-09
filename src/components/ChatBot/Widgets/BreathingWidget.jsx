@@ -1,5 +1,7 @@
 import React from 'react';
 
+import optionsMarkup from '../WidgetsList/OptionsMarkup';
+
 const BreathingWidget = (props) => {
   const options = [
     {
@@ -24,20 +26,7 @@ const BreathingWidget = (props) => {
     },
   ];
 
-  const optionsMarkup = options.map((option) => (
-    <li key={option.id} className="link-list">
-      <a
-        href={option.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="link-list-item-url"
-      >
-        {option.text}
-      </a>
-    </li>
-  ));
-
-  return <ul className="link-list">{optionsMarkup}</ul>;
+  return <ul className="link-list">{optionsMarkup(options)}</ul>;
 }
 
 export default BreathingWidget;

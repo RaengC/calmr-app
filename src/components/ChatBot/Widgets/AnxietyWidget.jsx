@@ -1,7 +1,6 @@
 import React from 'react';
-import LinkList from '../LinkList/LinkList'
 
-import optionsMarkup from './OptionsMarkup';
+import optionsMarkup from '../WidgetsList/OptionsMarkup';
 
 const AnxietyWidget = (props) => {
   const options = [
@@ -22,9 +21,7 @@ const AnxietyWidget = (props) => {
     },
   ];
 
-
   return <ul className="link-list">{optionsMarkup(options)}</ul>;
-
 }
 
 export default AnxietyWidget;
