@@ -40,7 +40,7 @@ function App() {
             <Link to="/savedarticles">Saved Articles</Link>
           </li>
           <li>
-            <Link to="/User">Login/SignIn</Link>
+            <Link to="/login">Login/SignIn</Link>
           </li>
         </ul>
       </nav>
@@ -48,8 +48,8 @@ function App() {
       {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
       <Switch>
-        <Route path="/Users">
-          <User />
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/about">
           <About />
@@ -100,6 +100,12 @@ function About() {
 function SavedArticlesLink() {
   return <div> <h2>Saved Articles</h2>;
   <SavedArticles/>
+  </div>
+}
+
+function Login() {
+  return <div><h2>Log in</h2>
+  <User />
   </div>
 }
 
