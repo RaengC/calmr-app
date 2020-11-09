@@ -21,7 +21,9 @@ Ruby on Rails used as database: [Rails database](https://github.com/lightgreener
 ## Technology Utilised
 * React
   * Dependencies:
+    * react-router-dom
     * react-chatbot-kit
     * react-util-kit
+
 * Ruby on Rails
   * Gems:

@@ -13,11 +13,11 @@ class User extends Component {
 }
   render () {
     return (
-      <div class="loginPage">
+      <div className="loginPage">
         <BrowserRouter>
           <Switch>
-            <Route exact path={"/User/UserHome"} component={UserHome} />
-            <Route exact path={"/User/UserDashboard"} component={UserDashboard}/>
+            <Route exact path={"/login/UserHome"} component={UserHome} />
+            <Route exact path={"/login/UserDashboard"} component={UserDashboard}/>
 
          </Switch>
         </BrowserRouter>
