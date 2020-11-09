@@ -11,6 +11,7 @@ import {
 import Chatbot from 'react-chatbot-kit'
 import { ConditionallyRender } from "react-util-kit";
 
+
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
 import ArticleDisplay from './Articles/ArticleDisplay';
@@ -89,7 +90,7 @@ function App() {
 }
 
 function Home() {
-  return <div> <h2>Home</h2>;
+  return <div> <h2>Home</h2>
   <JournalLanding />
   </div>
 }
