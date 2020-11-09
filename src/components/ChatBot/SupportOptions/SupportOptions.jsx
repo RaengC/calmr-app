@@ -21,7 +21,7 @@ const SupportOptions = (props) => {
       id: 3
     },
     {
-      text: "Creative Outlets",
+      text: "Creative Talks",
       handler: props.actionProvider.handleCreativeList,
       id: 4
     },

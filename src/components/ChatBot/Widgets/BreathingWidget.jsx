@@ -30,6 +30,4 @@ const BreathingWidget = (props) => {
 }
 
 
-
-
 export default BreathingWidget;

@@ -5,21 +5,21 @@ import optionsMarkup from '../WidgetsList/OptionsMarkup';
 const MindfullnessWidget = (props) => {
   const options = [
     {
-      text: "Test here",
+      text: "Mindfulness Meditation 10min",
       url:
-        "https://www.tarabrach.com/?powerpress_pinw=11174-podcast",
+        "https://youtu.be/syx3a1_LeFo",
       id: 1,
     },
     {
-      text: "Test 2",
+      text: "Body Scan 15min",
       url:
-        "https://www.tarabrach.com/?powerpress_pinw=11174-podcast",
+        "https://youtu.be/T0nuKBVQS7M",
       id: 2,
     },
     {
-      text: "Test 3",
+      text: "Why Mindfullness is a superpower",
       url:
-        "https://www.tarabrach.com/?powerpress_pinw=11174-podcast",
+        "https://youtu.be/w6T02g5hnT4",
       id: 3,
     },
   ];

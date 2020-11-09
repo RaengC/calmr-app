@@ -2,7 +2,6 @@ import React from 'react';
 import { createChatBotMessage } from 'react-chatbot-kit';
 
 import SupportOptions from './SupportOptions/SupportOptions';
-import LinkList from './LinkList/LinkList';
 import ActionProvider from './ActionProvider'
 import MessageParser from './MessageParser';
 import MindfullnessWidget from './Widgets/MindfullnessWidget';
@@ -10,6 +9,7 @@ import MeditationWidget from './Widgets/MeditationWidget';
 import BreathingWidget from './Widgets/BreathingWidget';
 import CreativeWidget from './Widgets/CreativeWidget';
 import AnxietyWidget from './Widgets/AnxietyWidget';
+import EmergencyWidget from './Widgets/EmergencyWidget'
 
 const botName = "CalmrBot";
 
@@ -60,6 +60,10 @@ const config = {
     {
       widgetName: "anxiety",
       widgetFunc: (props) => <AnxietyWidget {...props} />,
+    },
+    {
+      widgetName: "emergency",
+      widgetFunc: (props) => <EmergencyWidget {...props} />,
     },
   ],
 

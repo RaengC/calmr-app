@@ -15,6 +15,7 @@ class MessageParser {
     let checkBreathing =["breathing", "breath", "breathe"];
     let checkCreative =["creative outlets", "create", "art", "creative"];
     let checkAnxiety =["anxiety", "stress", "anxious", "stress help"];
+    let checkEmergency =["suicide", "in trouble", "emergency", "000", "911"]
 
     if (lowerCase.includes("hello")) {
       return this.actionProvider.greet();
@@ -38,6 +39,9 @@ class MessageParser {
     };
     if (checkAnxiety.some((item) => lowerCase.includes(item))) {
       return this.actionProvider.handleAnxietyList();
+    };
+    if (checkEmergency.some((item) => lowerCase.includes(item))) {
+      return this.actionProvider.handleEmergencyList();
     }
     return this.actionProvider.handleDefault();
   };
