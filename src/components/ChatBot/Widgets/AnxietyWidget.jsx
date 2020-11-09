@@ -10,13 +10,13 @@ const AnxietyWidget = (props) => {
       id: 1,
     },
     {
-      text: "Anxiety 2",
-      url: "",
+      text: "Meditation to help Anxiety & Stress",
+      url: "https://youtu.be/Fpiw2hH-dlc",
       id: 2,
     },
     {
-      text: "Anxiety 3",
-      url: "",
+      text: "Meditation before sleep for Anxiety",
+      url: "https://youtu.be/acLUWBuAvms",
       id: 3,
     },
   ];
