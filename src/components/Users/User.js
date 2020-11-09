@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {BrowserRouter , Switch , Route} from "react-router-dom";
+import UserHome from "./UserHome";
+import UserDashboard from "./UserDashboard"
 
 
 class User extends Component {
@@ -10,10 +13,15 @@ class User extends Component {
 }
   render () {
     return (
-      <div>
-<h1>Users1kkkkkkkkkkkkkkkkkkkkkkk</h1>
-<h1>Users2</h1>
-</div>
+      <div class="loginPage">
+        <BrowserRouter>
+          <Switch>
+            <Route exact path={"/User/UserHome"} component={UserHome} />
+            <Route exact path={"/User/UserDashboard"} component={UserDashboard}/>
+
+         </Switch>
+        </BrowserRouter>
+      </div>
     )
   }
 

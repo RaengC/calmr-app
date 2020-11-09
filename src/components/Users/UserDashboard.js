@@ -10,8 +10,9 @@ class UserDashboard extends Component {
 }
   render () {
     return (
-<h1>user dash1</h1>
-<h1>user dash2</h1>
+
+      <div><h1>user dash1</h1>
+      <h1>user dash2</h1></div>
     )
   }
 
