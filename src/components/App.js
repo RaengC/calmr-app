@@ -17,16 +17,18 @@ import JournalLanding from './Journal/JournalLanding';
 import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from  './Articles/SavedArticles';
 import Navigation from     './Navigation/Navigation';
-import User from           './Users/User'
+import Registration from   './Users/auth/Registration'
+import User from './Users/User'
 import About from './Journal/About'
 
-import { ReactComponent as ButtonIcon } from "./Assets/lotus-flower.png";
+import logo from "./Assets/lotus-flower.png";
 
 import '../App.css';
 
 function App() {
-  const [showChatBot, toggleChatbot] = useState(true);
+  const [showChatBot, toggleChatbot] = useState(false);
 
+  // const logo = require('./Assets/lotus-flower.png');
   return (
     <Router>
       <Navigation />
@@ -36,7 +38,10 @@ function App() {
               renders the first one that matches the current URL. */}
               <Switch>
                 <Route path="/login">
-                  <Login />
+                  <User />
+                </Route>
+                <Route path="/createAccount">
+                  <Registration />
                 </Route>
                 <Route path="/about">
                   <About />
@@ -60,8 +65,8 @@ function App() {
           <button
             className="app-chatbot-button">
             <img
-
-              src={require('./Assets/lotus-flower.png')}
+              className="logo"
+              src={logo}
               onClick={() => toggleChatbot((prev) => !prev)} />
           </button>
 
@@ -70,13 +75,5 @@ function App() {
   );
 }
 
-// remove this once user data in files. Link directly above
-function Login() {
-  return <div><h2>Log in</h2>
-  <User />
-  </div>
-
-
-};
 
 export default App;

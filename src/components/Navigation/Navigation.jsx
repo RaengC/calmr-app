@@ -29,7 +29,8 @@ class Navigation extends Component {
           <Menu.Item key="6"><Link to="/about">About</Link></Menu.Item>
           <SubMenu key="sub3" title="User Account">
             <Menu.Item key="7"><Link to="/savedarticles">Saved Articles</Link></Menu.Item>
-            <Menu.Item key="8"><Link to="/login">Login/SignIn</Link></Menu.Item>
+            <Menu.Item key="8"><Link to="/login">Login</Link></Menu.Item>
+            <Menu.Item key="9"><Link to="/createAccount">Create Account</Link></Menu.Item>
           </SubMenu>
         </SubMenu>
       </Menu>
