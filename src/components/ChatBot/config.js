@@ -2,7 +2,6 @@ import React from 'react';
 import { createChatBotMessage } from 'react-chatbot-kit';
 
 import SupportOptions from './SupportOptions/SupportOptions';
-import LinkList from './LinkList/LinkList';
 import ActionProvider from './ActionProvider'
 import MessageParser from './MessageParser';
 import MindfullnessWidget from './Widgets/MindfullnessWidget';
