@@ -7,6 +7,7 @@ class JournalLanding extends Component {
     return (
       <div>
         <h1>Journal Landing page</h1>
+        
       </div>
     );
   }

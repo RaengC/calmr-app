@@ -19,4 +19,4 @@ _handleClick(e){
   }
 }
 
-export default WidgetHome
+export default WidgetHome;a
