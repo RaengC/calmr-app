@@ -1,3 +1,13 @@
+* { border: 1px solid green;}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+.container {
+  font-family: 'Playfair Display', serif;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #f7f7fd;
+}
 
 .app-chatbot-container {
   margin: 40px 0;
