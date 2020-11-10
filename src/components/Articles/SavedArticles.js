@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player'
+import axios from 'axios'
+
+const SERVER_URL = 'http://localhost:3000/articles.json'
 
 class SavedArticles extends Component {
   constructor (props) {
     super (props)
     this.state = {
-      savedArticles: [{name: '15 minute Meditation', date: 'Feb 20'}, {name: 'Yoga positions for anxiety', date: 'Jun 20'}]
+      articles: []
     }
+    const fetchArticle = () => {
+      axios.get(SERVER_URL).then((results) => {
+        console.log(results.data)
+        this.setState({articles: results.data})
+      })
+    }
+    fetchArticle()
+
   }
   render () {
     return (
       <div>
-        <h2>Saved Articles</h2>
-          {this.state.savedArticles.flat().map((article) =>  <p><a href="https://en.wikipedia.org/wiki/Yoga_nidra">{article.name}</a></p>)}
+        <h1>Your Saved Collection</h1>
+          {this.state.articles.map((article) =>  <p><a target="_blank" href={article.link}>{article.name}</a>
+          <ReactPlayer url={article.link} /></p>)}
       </div>
     )
   }
