@@ -33,7 +33,6 @@ const config = {
     gist: "",
   },
   customComponents: {},
-
   widgets: [
     {
       widgetName: "supportOptions",
@@ -43,7 +42,7 @@ const config = {
     },
     {
       widgetName: "meditationLinks",
-      widgetFunc: (props) => <MeditationWidget {...props} />,
+      widgetFunc: (props) => <MeditationWidget {...props}  />,
     },
     {
       widgetName: "mindfullnessLinks",

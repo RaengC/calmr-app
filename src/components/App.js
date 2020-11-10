@@ -11,7 +11,7 @@ import {
 import Chatbot from 'react-chatbot-kit'
 import { ConditionallyRender } from "react-util-kit";
 import WidgetHome from './ChatBot/WidgetsList/WidgetHome'
-
+import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
 import ArticleDisplay from './Articles/ArticleDisplay';
@@ -24,7 +24,9 @@ import About from './Journal/About'
 import logo from "./Assets/lotus-flower.png";
 
 import '../App.css';
-
+const handleClick = (event) => {
+  console.log("here")
+}
 function App() {
   const [showChatBot, toggleChatbot] = useState(false);
 
@@ -32,6 +34,7 @@ function App() {
   return (
     <Router>
       <Navigation />
+      <ArticleDisplay />
         <div className="App">
           <div>
           {/* A <Switch> looks through its children <Route>s and
@@ -58,7 +61,8 @@ function App() {
           <div className="app-chatbot-container">
             <ConditionallyRender
               ifTrue={showChatBot}
-              show={ <BotApp /> }
+              show={ <BotApp />
+            }
             />
           </div>
 

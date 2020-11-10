@@ -2,23 +2,34 @@ import React, { Component } from 'react';
 import ArticleComments from './ArticleComments'
 import DisplayComments from './DisplayComments'
 
+import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
+import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
+
 
 
 class ArticleDisplay extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-
+      options: this.props.options,
+      href: '',
       articleName: 'Yoga Nidra',
       articleBody: 'Around the room, faces relax, jaws soften, and soon snores start to rumble as the men drop deeper into relaxation.',
       allComments: ['hi', 'there']
     }
-      this._handleComments = this._handleComments.bind(this)
+      this.handleComments = this.handleComments.bind(this)
+      this.handleClick = this.handleClick.bind(this)
   }
 
   handleComments(comments) {
     this.setState({allComments: [... this.state.allComments, comments ]})
   }
+
+  handleClick(href){
+    this.setState({href: href})
+    console.log('here')
+  }
+
   render() {
     return (
       <div>
@@ -31,6 +42,8 @@ class ArticleDisplay extends Component {
         <li>{comment}</li>
       )}
       </ul>
+
+      <MeditationWidget onClick={this.handleClick} />
 
       </div>
 
