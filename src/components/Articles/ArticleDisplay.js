@@ -16,7 +16,7 @@ class ArticleDisplay extends Component {
       this._handleComments = this._handleComments.bind(this)
   }
 
-  _handleComments(comments) {
+  handleComments(comments) {
     this.setState({allComments: [... this.state.allComments, comments ]})
   }
   render() {
@@ -25,7 +25,7 @@ class ArticleDisplay extends Component {
       <h1> {this.state.articleName} </h1>
       <p> {this.state.articleBody} </p>
       <button>Save {this.state.articleName} Article</button>
-      <ArticleComments onSubmit={this._handleComments}/>
+      <ArticleComments onSubmit={this.handleComments}/>
       <ul>
       {this.state.allComments.map((comment) =>
         <li>{comment}</li>

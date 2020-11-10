@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import BreathingWidget from './BreathingWidget';
+import OptionsMarkUp from './OptionsMarkup';
 
 class WidgetHome extends Component {
   constructor() {
@@ -7,14 +7,16 @@ class WidgetHome extends Component {
     this.state = {
       urlOnPage: ''
     }
-    this._handleClick = this._handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
-_handleClick(e){
+
+handleClick(url){
   console.log("here")
 }
-  render() {
+
+render() {
     return(
-        <BreathingWidget onClick={this._handleClick}/>
+      <OptionsMarkUp onClick={this.handleClick}/>
     )
   }
 }
