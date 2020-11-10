@@ -14,58 +14,60 @@ import './Navigation.css'
 // const { SubMenu } = Menu;
 
 class Navigation extends Component {
-  handleClick = (e) => {
-    console.log("click", e);
+  // handleClick = (e) => {
+  //   console.log("click", e);
+  // }
+
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      visible: false
+    };
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  // constructor(props, context) {
-  //   super(props, context);
-  //
-  //   this.state = {
-  //     visible: false
-  //   };
-  //   this.handleMouseDown = this.handleMouseDown.bind(this);
-  //   this.toggleMenu = this.toggleMenu.bind(this);
-  // }
-  //
-  // handleMouseDown(e) {
-  //   this.toggleMenu();
-  //   console.log("clicked");
-  //   e.stopPropagation();
-  // }
-  //
-  // toggleMenu() {
-  //   this.setState({
-  //     visible: !this.state.visible
-  //   });
-  // }
+  handleMouseDown(e) {
+    this.toggleMenu();
+    console.log("clicked");
+    e.stopPropagation();
+  }
+
+  toggleMenu() {
+    this.setState({
+      visible: !this.state.visible
+    });
+  }
 
   render() {
     return (
-      // Side Navigation
-    // <div>
-    //   <MenuButton handleMouseDown={this.handleMouseDown} />
-    //   <Menu handleMouseDown={this.handleMouseDown}
-    //         menuVisibility={this.state.visible} />
-    // </div>
+      // Slide Navigation
+    <div>
+      <MenuButton handleMouseDown={this.handleMouseDown} />
+      <Menu handleMouseDown={this.handleMouseDown}
+            menuVisibility={this.state.visible} />
+    </div>
 
-      <div class="container">
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onClick="closNav()">&times;</a>
-          <a href="#"><Link to="/about">About</Link></a>
-          <a href="#"><Link to="/articleDisplay">Article</Link></a>
-          <a href="#"><Link to="/">Home</Link></a>
-          <a href="#"><Link to="/savedarticles">Saved Articles</Link></a>
-          <a href="#"><Link to="/login">Login</Link></a>
-          <a href="#"><Link to="/login/userhome">Create New Account</Link></a>
-          <a href="#"><Link to="/user/edit">Edit Account</Link></a>
-          <a href="#"><Link to="/logout">Logout</Link></a>
-        </div>
 
-        <span style={{fontSize: "30px", cursor: "pointer"}} onClick={this.openNav}>&#9776;open</span>
-      </div>
+  // css for this
+      // <div class="container">
+      //   <div id="mySidenav" class="sidenav">
+      //     <a href="javascript:void(0)" class="closebtn" onClick="closNav()">&times;</a>
+      //     <a href="#"><Link to="/about">About</Link></a>
+      //     <a href="#"><Link to="/articleDisplay">Article</Link></a>
+      //     <a href="#"><Link to="/">Home</Link></a>
+      //     <a href="#"><Link to="/savedarticles">Saved Articles</Link></a>
+      //     <a href="#"><Link to="/login">Login</Link></a>
+      //     <a href="#"><Link to="/login/userhome">Create New Account</Link></a>
+      //     <a href="#"><Link to="/user/edit">Edit Account</Link></a>
+      //     <a href="#"><Link to="/logout">Logout</Link></a>
+      //   </div>
+      //
+      //   <span style={{fontSize: "30px", cursor: "pointer"}} onClick={this.openNav}>&#9776;open</span>
+      // </div>
 
-      
+
       // <div class="container">
       //   <div class="row"><Link to="/">Home</Link></div>
       //   <div class="row"><Link to="/about">About</Link></div>
