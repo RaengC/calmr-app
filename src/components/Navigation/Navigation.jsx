@@ -30,7 +30,7 @@ class Navigation extends Component {
           <SubMenu key="sub3" title="User Account">
             <Menu.Item key="7"><Link to="/savedarticles">Saved Articles</Link></Menu.Item>
             <Menu.Item key="8"><Link to="/login">Login</Link></Menu.Item>
-            <Menu.Item key="9"><Link to="/login/userhome">Create New Account</Link></Menu.Item>
+            <Menu.Item key="9"><Link to="/signup">Sign Up</Link></Menu.Item>
             <Menu.Item key="10"><Link to="/user/edit">Edit Account</Link></Menu.Item>
             <Menu.Item key="11"><Link to="/logout">Logout</Link></Menu.Item>
           </SubMenu>
