@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import { ConditionallyRender } from "react-util-kit";
-import WidgetHome from './ChatBot/WidgetsList/WidgetHome'
 import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';

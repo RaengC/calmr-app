@@ -18,28 +18,26 @@ class OptionsMarkup extends Component {
     }
 
     _handleClick(event) {
-      // this.props.onClick(this.state.href)
       event.preventDefault()
       if (this.props.handleClick) {
         this.props.handleClick(this.state.href)
       }
 
+
   }
 
     render(){
+      console.log(this.props)
       if (!this.props.options){
         return ''
       }
-      const onClick = this.props.handleClick;
       return(
         this.props.options.map((option) => (
-
         <li key={option.id} className="link-list">
 
           <a
             href={option.url}
-
-            onClick={() => console.log("working", onClick)}
+            onClick={this._handleClick}
             target="_blank"
             rel="noopener noreferrer"
             className="link-list-item-url"
