@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ArticleComments from './ArticleComments'
 import DisplayComments from './DisplayComments'
 
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
-
 
 
 class ArticleDisplay extends Component {
@@ -15,11 +15,13 @@ class ArticleDisplay extends Component {
       href: '',
       articleName: 'Yoga Nidra',
       articleBody: 'Around the room, faces relax, jaws soften, and soon snores start to rumble as the men drop deeper into relaxation.',
-      allComments: ['hi', 'there']
+      allComments: ['hi', 'there'],
     }
       this.handleComments = this.handleComments.bind(this)
       this.handleClick = this.handleClick.bind(this)
+
   }
+
 
   handleComments(comments) {
     this.setState({allComments: [... this.state.allComments, comments ]})
