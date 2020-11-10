@@ -17,6 +17,8 @@ import Navigation from     './Navigation/Navigation';
 import Registration from   './Users/auth/Registration'
 import User from './Users/User'
 import About from './Journal/About'
+import Login from './Users/registrations/Login'
+import Signup from './Users/registrations/Signup'
 
 import logo from "./Assets/lotus-flower.png";
 
@@ -37,7 +39,10 @@ function App() {
               renders the first one that matches the current URL. */}
               <Switch>
                 <Route path="/login">
-                  <User />
+                  <Login />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
                 </Route>
                 <Route path="/createAccount">
                   <Registration />
