@@ -1,3 +1,9 @@
+* { border: 1px solid green;}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
 
 .app-chatbot-container {
   margin: 40px 0;

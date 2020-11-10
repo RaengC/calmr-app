@@ -1,14 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
   useParams
 } from "react-router-dom";
 
-import Chatbot from 'react-chatbot-kit'
 import { ConditionallyRender } from "react-util-kit";
 import WidgetHome from './ChatBot/Widgets/WidgetHome'
 
@@ -26,13 +23,15 @@ import logo from "./Assets/lotus-flower.png";
 import '../App.css';
 
 function App() {
+
   const [showChatBot, toggleChatbot] = useState(false);
 
   // const logo = require('./Assets/lotus-flower.png');
   return (
     <Router>
       <Navigation />
-        <div className="App">
+        <div className="container">
+
           <div>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
@@ -45,6 +44,9 @@ function App() {
                 </Route>
                 <Route path="/about">
                   <About />
+                </Route>
+                <Route path="/articleDisplay">
+                  <ArticleDisplay />
                 </Route>
                 <Route path="/savedarticles">
                   <SavedArticles />
