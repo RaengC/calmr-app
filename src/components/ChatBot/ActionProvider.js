@@ -98,6 +98,7 @@ class ActionProvider {
 
   // update the ChatBot messages here
   updateChatbotState = (messages) => {
+    console.log("state", messages)
     if (Array.isArray(messages)) {
       this.setState((state) => ({
         ...state,

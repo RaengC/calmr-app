@@ -6,7 +6,6 @@ class MeditationWidget extends Component {
   constructor(props){
   super(props)
   this.state = {
-      href: '',
       options: [{
       text: "Meditation Anywhere 5min",
       url:
@@ -23,14 +22,14 @@ class MeditationWidget extends Component {
       url: "https://youtu.be/inpok4MKVLM",
       id: 3
     }]
-  }
 
+  }
   }
 
   render() {
     return(
       <ul className="link-list"  >
-      <OptionsMarkup yellow={true} options={this.state.options} handleClick={this.props.onClick}/></ul>
+      <OptionsMarkup yellow={true} options={this.state.options}/></ul>
     )
   }
 }

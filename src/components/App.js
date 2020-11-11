@@ -3,11 +3,16 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  HashRouter,
   useParams
 } from "react-router-dom";
 
 import { ConditionallyRender } from "react-util-kit";
+<<<<<<< HEAD
+import { Menu } from './Menu/Menu'
 import WidgetHome from './ChatBot/WidgetsList/WidgetHome'
+=======
+>>>>>>> 1040a163ccb337ceb268627c794849e9c73e62ea
 import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
@@ -15,13 +20,11 @@ import Article from './Articles/Article';
 import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from  './Articles/SavedArticles';
 import ArticleForm from './Articles/ArticleForm'
-import Navigation from     './Navigation/Navigation';
 import Registration from   './Users/auth/Registration'
 import User from './Users/User'
 import About from './Journal/About'
 import Login from './Users/registrations/Login'
 import Signup from './Users/registrations/Signup'
-
 
 import logo from "./Assets/lotus-flower.png";
 
@@ -33,17 +36,15 @@ function App() {
 
   const [showChatBot, toggleChatbot] = useState(false);
 
-  // const logo = require('./Assets/lotus-flower.png');
   return (
-    <Router>
-      <Navigation />
-      <ArticleDisplay />
+    <HashRouter>
+      <Menu />
         <div className="App">
           <div>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
               <Switch>
-                <Route path="/login">
+                <Route path="/login" component={Login}>
                   <Login />
                 </Route>
                 <Route path="/signup">
@@ -90,7 +91,7 @@ function App() {
           </button>
 
         </div>
-    </Router>
+    </HashRouter>
   );
 }
 
