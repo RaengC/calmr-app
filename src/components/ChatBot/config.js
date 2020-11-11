@@ -31,7 +31,6 @@ const config = {
 
   state: {
     gist: "",
-    href: ""
   },
   customComponents: {},
   widgets: [
@@ -44,7 +43,6 @@ const config = {
     {
       widgetName: "meditationLinks",
       widgetFunc: (props) => <MeditationWidget {...props} />,
-      mapStateToProps: ["href"]
     },
     {
       widgetName: "mindfullnessLinks",
