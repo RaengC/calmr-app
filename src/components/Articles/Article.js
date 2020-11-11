@@ -9,7 +9,10 @@ class Article extends Component {
 
   render() {
     return (
+        <div>
       <ArticleDisplay />
+      <ArticleForm />
+      </div>
     )
   }
 }
