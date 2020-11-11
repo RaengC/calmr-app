@@ -35,7 +35,7 @@ function App() {
   const [showChatBot, toggleChatbot] = useState(false);
 
   return (
-    <HashRouter>
+    <HashRouter className="container">
       <Menu />
         <div className="header-box">
 
