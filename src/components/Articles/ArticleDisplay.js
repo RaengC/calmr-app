@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Article from './Article'
 import DisplayComments from './DisplayComments'
+import ReactPlayer from 'react-player'
 
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
@@ -29,16 +30,15 @@ class ArticleDisplay extends Component {
 
 
   render() {
-    console.log("props", this.props.onSubmit)
+    console.log("props", this.props.onSubmit.audio)
     if (this.props.onSubmit.length == 0) {
       return false
     }
     return (
       <div>
-        <p>
-        {this.props.onSubmit.audio}
-        {this.props.onSubmit.podcast.title_original}
-        </p>
+        <ReactPlayer
+        url={this.props.onSubmit.link}
+        />
       </div>
 
     )
