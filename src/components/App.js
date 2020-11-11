@@ -37,6 +37,9 @@ function App() {
   return (
     <HashRouter className="container">
       <Menu />
+      <Article />
+
+
         <div className="header-box">
 
           <img
@@ -66,7 +69,7 @@ function App() {
                   <About />
                 </Route>
                 <Route path="/articleDisplay">
-                  <Article />
+                  <ArticleDisplay />
                 </Route>
                 <Route path="/articleForm">
                   <ArticleForm />
