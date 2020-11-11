@@ -55,7 +55,7 @@ function App() {
                   <About />
                 </Route>
                 <Route path="/articleDisplay">
-                  <ArticleDisplay />
+                  <Article />
                 </Route>
                 <Route path="/articleForm">
                   <ArticleForm />
