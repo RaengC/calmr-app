@@ -22,6 +22,7 @@ import Registration from   './Users/auth/Registration'
 import UserHome from './Users/UserHome'
 import About from './Journal/About'
 import Login from './Users/registrations/Login'
+import Logout from './Users/registrations/Logout'
 import Signup from './Users/registrations/Signup'
 import axios from 'axios';
 
@@ -72,6 +73,7 @@ class App extends Component {
           isLoggedIn: false,
           user: {}
           })
+          return '';
         }
         handleBotClick=()=>{
           this.setState({
@@ -126,6 +128,7 @@ class App extends Component {
 
                 <Route
                   exact path='/logout'
+
                 />
 
 
@@ -154,6 +157,8 @@ class App extends Component {
                 <Route path="/savedarticles">
                   <SavedArticles />
                 </Route>
+    
+                  <About />
                 <Route path="/">
 
                   <About />
@@ -175,10 +180,6 @@ class App extends Component {
               src={logo}
             alt="lotus flower image"
              onClick={this.handleBotClick}/>
-
-
-
-
           </button>
         </div>
     </HashRouter>
