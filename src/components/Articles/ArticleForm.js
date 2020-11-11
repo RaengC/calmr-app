@@ -28,10 +28,10 @@ class ArticleForm extends Component {
         return (
             <div>
              <h2> To search for a podcast enter your search criteria below</h2>
-            <form onSubmit={ this._handleSubmit}>
-                <input type="search" placeholder="search podcast" required onInput={this._handleInput}/>
-                <input type="submit" value="Search"/>
-            </form>
+              <form onSubmit={ this._handleSubmit}>
+                  <input type="search" placeholder="search podcast" required onInput={this._handleInput}/><br></br>
+                  <input type="submit" value="Search"/>
+              </form>
             </div>
         )
     }

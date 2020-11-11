@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   HashRouter,
+  useHistory,
   useParams
 } from "react-router-dom";
 
@@ -11,10 +12,8 @@ import { ConditionallyRender } from "react-util-kit";
 
 import { Menu } from './Menu/Menu'
 
-
 import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
-import JournalLanding from './Journal/JournalLanding';
 import Article from './Articles/Article';
 import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from  './Articles/SavedArticles';
@@ -29,9 +28,11 @@ import axios from 'axios';
 import logo from "./Assets/lotus-flower.png";
 
 import '../App.css';
+
 const handleClick = (event) => {
   console.log("here")
 }
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -48,6 +49,7 @@ class App extends Component {
     loginStatus = () => {
         axios.get('http://localhost:3000/logged_in', {withCredentials: true})
         .then(response => {
+
 
           if (response.data.logged_in) {
             this.handleLogin(response)
@@ -73,22 +75,40 @@ class App extends Component {
         }
         handleBotClick=()=>{
           this.setState({
-            showChatBot: true
+            showChatBot: !this.state.showChatBot
           })
         }
 //  const [showChatBot, toggleChatbot] = useState(false);
 
   render() {
-    return(
 
-    <HashRouter>
+
+
+  return (
+    <HashRouter className="container">
+
       <Menu />
-        <div className="App">
+      <Article />
+
+
+        <div className="header-box">
+
+          <img
+            className="header-logo"
+            src={logo}
+            alt="lotus flower image"
+            />
+
+          <h1 className="header">Calmr</h1>
+        </div>
+
+        <div className="app">
           <div>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
 
               <Switch>
+
                 <Route
                   exact path='/login'
                   render={props => (
@@ -135,7 +155,8 @@ class App extends Component {
                   <SavedArticles />
                 </Route>
                 <Route path="/">
-                  <JournalLanding />
+
+                  <About />
 
                 </Route>
               </Switch>
@@ -152,7 +173,12 @@ class App extends Component {
             <img
               className="logo"
               src={logo}
+            alt="lotus flower image"
              onClick={this.handleBotClick}/>
+
+
+
+
           </button>
         </div>
     </HashRouter>
