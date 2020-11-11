@@ -6,7 +6,6 @@ import DisplayComments from './DisplayComments'
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 
-
 class ArticleDisplay extends Component {
   constructor(props) {
     super(props)
@@ -19,7 +18,6 @@ class ArticleDisplay extends Component {
     }
       this.handleComments = this.handleComments.bind(this)
       this.handleClick = this.handleClick.bind(this)
-
   }
 
 
