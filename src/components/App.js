@@ -88,9 +88,6 @@ class App extends Component {
     <HashRouter className="container">
 
       <Menu />
-      <Article />
-
-
         <div className="header-box">
 
           <img
