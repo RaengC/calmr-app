@@ -30,15 +30,25 @@ class ArticleDisplay extends Component {
 
 
   render() {
-    console.log("props", this.props.onSubmit.audio)
+    console.log("props", this.props.onSubmit)
+    const image = this.props.onSubmit.thumbnail
     if (this.props.onSubmit.length == 0) {
       return false
     }
     return (
-      <div>
-        <ReactPlayer
-        url={this.props.onSubmit.link}
-        />
+      <div className='player-wrapper'>
+        <p>
+        {this.props.onSubmit.title_original}
+          <ReactPlayer
+          className='react-player'
+          url={this.props.onSubmit.audio}
+          width='100%'
+          height='100%'
+          playing={false}
+          controls={true}
+          />
+        <img src={image}></img>
+        </p>
       </div>
 
     )
