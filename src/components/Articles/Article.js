@@ -14,28 +14,28 @@ class Article extends Component {
       searchResults: []
     }
     this.listenNotes = this.listenNotes.bind(this)
-    this.fetchQuery = this.fetchQuery.bind(this)
     this.passResultsToDisplay = this.passResultsToDisplay.bind(this)
   }
 
-    listenNotes = async () => {
-      const query = this.state.query
+
+    listenNotes = async (query) => {
+      this.setState({query: query})
+      console.log(this.state.query)
     const response = await unirest.get(`https://listen-api.listennotes.com/api/v2/search?q=${query}&sort_by_date=0&type=episode&offset=0&len_min=10&len_max=30&genre_ids=68%2C82&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0`)
       .header('X-ListenAPI-Key', 'c553d29fdd154bc3a22678b4f2f3350d').then((results) => {
-
+        console.log(results)
       results.body.results.map((result) => (
         this.setState({searchResults: result})
+
       ))
-        this.props.handleSearch(this.state.searchResults)
+
       })
     }
 
-    fetchQuery(query) {
-      this.setState({query: query})
-    }
 
-    passResultsToDisplay() {
-      this.props.handleSearch(this.state.searchResults)
+
+    passResultsToDisplay(props) {
+      this.props.onSubmit(this.state.searchResults)
     }
 // api call there - podcast api
 
@@ -43,8 +43,8 @@ class Article extends Component {
 
     return (
         <div>
-        <ArticleForm onSubmit={this.fetchQuery}/>
-        <ArticleDisplay handleSearch={this.passResultsToDisplay} />
+        <ArticleForm onSubmit={this.listenNotes}/>
+        <ArticleDisplay onSubmit={this.state.searchResults} />
 
       </div>
     )

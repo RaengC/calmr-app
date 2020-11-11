@@ -24,12 +24,13 @@ class ArticleDisplay extends Component {
   }
 
   render() {
+    console.log("props", this.props)
+    if (!this.props) {
+      return false
+    }
     return (
       <div>
-      {this.props.searchResults.map((result) => (
-        console.log(result)
-      ))
-      }
+      
       </div>
 
     )
