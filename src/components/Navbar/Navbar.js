@@ -7,11 +7,11 @@ export const Navbar = ({ onClick, toggle }) => {
       <div className={`slide-menu ${ toggle ? 'slide-in' : 'slide-out'}`}>
         <ul className="nav-bar">
           <NavLink onClick={onClick} to='/about'>Home</NavLink>
-          <NavLink onClick={onClick} to='/articleForm'>Search for Podcast</NavLink>
+          <NavLink onClick={onClick} to='/article'>Search for Podcast</NavLink>
           <NavLink onClick={onClick} to='/savedarticles'>Saved Podcasts</NavLink>
-          <NavLink onClick={onClick} to='/login'>Login/Create Account</NavLink>
+          <NavLink onClick={onClick} to='/login'>Your Account</NavLink>
           <NavLink onClick={onClick} to='/user/edit'>Update Profile</NavLink>
-          <NavLink onClick={onClick} to='/logout'>Logout</NavLink>
+
         </ul>
       </div>
     </HashRouter>
