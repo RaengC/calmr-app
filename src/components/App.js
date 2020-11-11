@@ -14,6 +14,7 @@ import JournalLanding from './Journal/JournalLanding';
 import Article from './Articles/Article';
 import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from  './Articles/SavedArticles';
+import ArticleForm from './Articles/ArticleForm'
 import Navigation from     './Navigation/Navigation';
 import Registration from   './Users/auth/Registration'
 import User from './Users/User'
@@ -56,6 +57,9 @@ function App() {
                 </Route>
                 <Route path="/articleDisplay">
                   <ArticleDisplay />
+                </Route>
+                <Route path="/articleForm">
+                  <ArticleForm />
                 </Route>
                 <Route path="/article">
                   <Article />
