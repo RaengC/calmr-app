@@ -16,16 +16,21 @@ class ArticleDisplay extends Component {
       href: '',
       searchResults: [],
     }
+
+
     this.displayResults = this.displayResults.bind(this)
   }
+
 
   displayResults(results) {
     console.log(results)
   }
 
+
+
   render() {
-    console.log("props", this.props)
-    if (!this.props) {
+    console.log("props", this.props.onSubmit.audio)
+    if (this.props.onSubmit.audio == undefined) {
       return false
     }
     return (
@@ -36,6 +41,8 @@ class ArticleDisplay extends Component {
     )
   }
 }
+
+
 
 
 
