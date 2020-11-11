@@ -29,21 +29,27 @@ class ArticleDisplay extends Component {
 
 
   render() {
-    console.log("props", this.props.onSubmit.audio)
-    if (this.props.onSubmit.audio == undefined) {
+    console.log("props", this.props.onSubmit)
+    if (this.props.onSubmit.length == 0) {
       return false
     }
     return (
       <div>
-      
+        <p>
+        {this.props.onSubmit.audio}
+        {this.props.onSubmit.podcast.title_original}
+        </p>
       </div>
 
     )
   }
 }
 
-
-
+//
+// {this.props.onSubmit.map((result) =>
+// <p>{result}</p>)
+// {console.log('props2', this.props.onSubmit)}
+// }
 
 
 
