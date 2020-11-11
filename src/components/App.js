@@ -8,11 +8,7 @@ import {
 } from "react-router-dom";
 
 import { ConditionallyRender } from "react-util-kit";
-<<<<<<< HEAD
 import { Menu } from './Menu/Menu'
-import WidgetHome from './ChatBot/WidgetsList/WidgetHome'
-=======
->>>>>>> 1040a163ccb337ceb268627c794849e9c73e62ea
 import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
