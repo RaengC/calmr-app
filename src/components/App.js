@@ -10,14 +10,17 @@ import { ConditionallyRender } from "react-util-kit";
 import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
+import Article from './Articles/Article';
 import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from  './Articles/SavedArticles';
+import ArticleForm from './Articles/ArticleForm'
 import Navigation from     './Navigation/Navigation';
 import Registration from   './Users/auth/Registration'
 import User from './Users/User'
 import About from './Journal/About'
 import Login from './Users/registrations/Login'
 import Signup from './Users/registrations/Signup'
+
 
 import logo from "./Assets/lotus-flower.png";
 
@@ -53,6 +56,12 @@ function App() {
                 </Route>
                 <Route path="/articleDisplay">
                   <ArticleDisplay />
+                </Route>
+                <Route path="/articleForm">
+                  <ArticleForm />
+                </Route>
+                <Route path="/article">
+                  <Article />
                 </Route>
                 <Route path="/savedarticles">
                   <SavedArticles />
