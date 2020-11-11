@@ -42,7 +42,7 @@ const config = {
     },
     {
       widgetName: "meditationLinks",
-      widgetFunc: (props) => <MeditationWidget {...props}  />,
+      widgetFunc: (props) => <MeditationWidget {...props} />,
     },
     {
       widgetName: "mindfullnessLinks",
@@ -67,5 +67,4 @@ const config = {
   ],
 
 };
-
 export default config;

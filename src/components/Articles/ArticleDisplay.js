@@ -5,6 +5,7 @@ import DisplayComments from './DisplayComments'
 
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
+import config from '../ChatBot/config'
 
 class ArticleDisplay extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class ArticleDisplay extends Component {
       </ul>
 
       <MeditationWidget onClick={this.handleClick} />
+      <config />
 
       </div>
 
