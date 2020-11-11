@@ -7,14 +7,14 @@ class About extends Component {
   render() {
     return (
       <div class="aboutInfo">
-        <h1>The Calmr App</h1>
-        <p>The Calmr app offers you a quick way to search for a small number of resources and links to help you through your day.  </p>
-        <p>The CalmrBot <img src={logo} className="logo"/> can assist you in searching for what you are looking for on the page and will provide a small number of selected options. </p>
-        <p>You can either click on the options or type in your selection.</p>
-        <br></br>
-        <p>Anyone can use the CalmrBot to search for information on our site.  </p>
-        <p>If you would like to save any information you find you have the option to create an account. </p>
-        <p>As an account holder you can access your list of saved items add comments or notes which may assist you tracking how you are feeling at any specific time using the resource.</p>
+        <h2>Welcome to Calmr</h2>
+          <p>Where we offer you a way to search for podcasts of your choosing or relax with inspirational videos.</p>
+          <br></br>
+          <p>The CalmrBot <img src={logo} className="logo"/> can assist you in searching for easy to use videos on assisting with stress reduction. It provides a small number of selected options for you. </p>
+          <p>You can either click on the options  the CalmrBot provides or manually type in your selection.</p>
+          <br></br>
+          <p>If you would like to save any podcasts you find you have the option to create an account. </p>
+          <p>As an account holder you can access your list of saved items and add comments or notes, which may assist you tracking how you are feeling at any specific time using the resource.</p>
       </div>
     )
   }

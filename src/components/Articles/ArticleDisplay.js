@@ -7,6 +7,8 @@ import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
 
+import './Articles.css';
+
 class ArticleDisplay extends Component {
   constructor(props) {
     super(props)
@@ -34,18 +36,18 @@ class ArticleDisplay extends Component {
   render() {
     return (
       <div>
-      <h1> {this.state.articleName} </h1>
-      <p> {this.state.articleBody} </p>
-      <button>Save {this.state.articleName} Article</button>
-      <ArticleComments onSubmit={this.handleComments}/>
-      <ul>
-      {this.state.allComments.map((comment) =>
-        <li>{comment}</li>
-      )}
-      </ul>
+        <h1> {this.state.articleName} </h1>
+        <p> {this.state.articleBody} </p>
+        <button>Save {this.state.articleName} Article</button>
+        <ArticleComments onSubmit={this.handleComments}/>
+        <ul>
+        {this.state.allComments.map((comment) =>
+          <li className="comment-li">{comment}</li>
+        )}
+        </ul>
 
-      <MeditationWidget onClick={this.handleClick} />
-      <config />
+        <MeditationWidget onClick={this.handleClick} />
+        <config />
 
       </div>
 
