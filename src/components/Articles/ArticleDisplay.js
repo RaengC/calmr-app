@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ArticleComments from './ArticleComments'
+import Article from './Article'
 import DisplayComments from './DisplayComments'
 
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
@@ -13,42 +13,23 @@ class ArticleDisplay extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      options: this.props.options,
       href: '',
-      articleName: 'Yoga Nidra',
-      articleBody: 'Around the room, faces relax, jaws soften, and soon snores start to rumble as the men drop deeper into relaxation.',
-      allComments: ['hi', 'there'],
+      searchResults: [],
     }
-      this.handleComments = this.handleComments.bind(this)
-      this.handleClick = this.handleClick.bind(this)
+    this.displayResults = this.displayResults.bind(this)
   }
 
-
-  handleComments(comments) {
-    this.setState({allComments: [... this.state.allComments, comments ]})
-  }
-
-  handleClick(href){
-    this.setState({href: href})
-    console.log('here')
+  displayResults(results) {
+    console.log(results)
   }
 
   render() {
     return (
       <div>
-        <h1> {this.state.articleName} </h1>
-        <p> {this.state.articleBody} </p>
-        <button>Save {this.state.articleName} Article</button>
-        <ArticleComments onSubmit={this.handleComments}/>
-        <ul>
-        {this.state.allComments.map((comment) =>
-          <li className="comment-li">{comment}</li>
-        )}
-        </ul>
-
-        <MeditationWidget onClick={this.handleClick} />
-        <config />
-
+      {this.props.searchResults.map((result) => (
+        console.log(result)
+      ))
+      }
       </div>
 
     )
