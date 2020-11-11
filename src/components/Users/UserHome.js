@@ -13,8 +13,14 @@ const handleClick = () => {
 return (
 
     <div>
-      <Link to='/login'>Log In</Link>
-      <br></br>
+
+        
+        <Link to='/login/login'>Log In</Link>
+        <br></br>
+
+
+
+
       <Link to='/signup'>Sign Up</Link>
       <br></br>
       {
