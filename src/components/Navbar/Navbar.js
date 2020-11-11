@@ -8,7 +8,7 @@ export const Navbar = ({ onClick, toggle }) => {
         <ul className="nav-bar">
           <NavLink onClick={onClick} to='/about'>Home</NavLink>
           <NavLink onClick={onClick} to='/articleForm'>Search for Podcast</NavLink>
-          <NavLink onClick={onClick} to='/savedarticles'>Saved Articles</NavLink>
+          <NavLink onClick={onClick} to='/savedarticles'>Saved Podcasts</NavLink>
           <NavLink onClick={onClick} to='/login'>Login/Create Account</NavLink>
           <NavLink onClick={onClick} to='/user/edit'>Update Profile</NavLink>
           <NavLink onClick={onClick} to='/logout'>Logout</NavLink>
