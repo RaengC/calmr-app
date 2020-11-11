@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React , { Component }from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,11 +8,10 @@ import {
 } from "react-router-dom";
 
 import { ConditionallyRender } from "react-util-kit";
-<<<<<<< HEAD
+
 import { Menu } from './Menu/Menu'
-import WidgetHome from './ChatBot/WidgetsList/WidgetHome'
-=======
->>>>>>> 1040a163ccb337ceb268627c794849e9c73e62ea
+
+
 import OptionsMarkup from './ChatBot/WidgetsList/OptionsMarkup';
 import BotApp from './ChatBot/BotApp';
 import JournalLanding from './Journal/JournalLanding';
@@ -25,6 +24,7 @@ import User from './Users/User'
 import About from './Journal/About'
 import Login from './Users/registrations/Login'
 import Signup from './Users/registrations/Signup'
+import axios from 'axios';
 
 import logo from "./Assets/lotus-flower.png";
 
@@ -32,11 +32,22 @@ import '../App.css';
 const handleClick = (event) => {
   console.log("here")
 }
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+      user: {}
+     };
+  }
+  componentDidMount() {
+      
+    }
 
-  const [showChatBot, toggleChatbot] = useState(false);
+//  const [showChatBot, toggleChatbot] = useState(false);
 
-  return (
+  render() {
+    return(
     <HashRouter>
       <Menu />
         <div className="App">
@@ -45,7 +56,7 @@ function App() {
               renders the first one that matches the current URL. */}
               <Switch>
                 <Route path="/login" component={Login}>
-                  <Login />
+                  <User test/>
                 </Route>
                 <Route path="/signup">
                   <Signup />
@@ -73,27 +84,28 @@ function App() {
                 </Route>
               </Switch>
           </div>
-
-          <div className="app-chatbot-container">
-            <ConditionallyRender
-              ifTrue={showChatBot}
-              show={ <BotApp />
-            }
-            />
-          </div>
-
-          <button
-            className="app-chatbot-button">
-            <img
-              className="logo"
-              src={logo}
-              onClick={() => toggleChatbot((prev) => !prev)} />
-          </button>
-
         </div>
     </HashRouter>
-  );
+)  };
 }
+
+          // <div className="app-chatbot-container">
+          //   <ConditionallyRender
+          //     ifTrue={showChatBot}
+          //     show={ <BotApp />
+          //   }
+          //   />
+          // </div>
+          //
+          // <button
+          //   className="app-chatbot-button">
+          //   <img
+          //     className="logo"
+          //     src={logo}
+          //     onClick={() => toggleChatbot((prev) => !prev)} />
+          // </button>
+
+
 
 
 export default App;
