@@ -20,7 +20,7 @@ import ArticleDisplay from './Articles/ArticleDisplay';
 import SavedArticles from  './Articles/SavedArticles';
 import ArticleForm from './Articles/ArticleForm'
 import Registration from   './Users/auth/Registration'
-import User from './Users/User'
+import UserHome from './Users/UserHome'
 import About from './Journal/About'
 import Login from './Users/registrations/Login'
 import Signup from './Users/registrations/Signup'
@@ -37,30 +37,85 @@ class App extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-      user: {}
+      user: {},
+      showChatBot: false
      };
+     this.handleLogout=this.handleLogout.bind(this)
   }
   componentDidMount() {
-      
+      this.loginStatus()
     }
+    loginStatus = () => {
+        axios.get('http://localhost:3000/logged_in', {withCredentials: true})
+        .then(response => {
 
+          if (response.data.logged_in) {
+            this.handleLogin(response)
+          } else {
+            this.handleLogout()
+          }
+        })
+        .catch(error => console.log('api errors:', error))
+      }
+
+      handleLogin = (data) => {
+          this.setState({
+            isLoggedIn: true,
+            user: data.user
+          })
+          //debugger;
+        }
+      handleLogout = () => {
+          this.setState({
+          isLoggedIn: false,
+          user: {}
+          })
+        }
+        handleBotClick=()=>{
+          this.setState({
+            showChatBot: true
+          })
+        }
 //  const [showChatBot, toggleChatbot] = useState(false);
 
   render() {
     return(
+
     <HashRouter>
       <Menu />
         <div className="App">
           <div>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
+
               <Switch>
-                <Route path="/login" component={Login}>
-                  <User test/>
-                </Route>
-                <Route path="/signup">
-                  <Signup />
-                </Route>
+                <Route
+                  exact path='/login'
+                  render={props => (
+                  <UserHome {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}
+
+                    />
+                  )}
+                />
+                <Route
+                  exact path='/login/login'
+                  render={props => (
+                  <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+                  )}
+                />
+
+                <Route
+                  exact path='/logout'
+                />
+
+
+                <Route
+                  exact path='/signup'
+                  render={props => (
+                  <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+                  )}
+                    />
+
                 <Route path="/createAccount">
                   <Registration />
                 </Route>
@@ -81,11 +136,27 @@ class App extends Component {
                 </Route>
                 <Route path="/">
                   <JournalLanding />
+
                 </Route>
               </Switch>
           </div>
+          <div className="app-chatbot-container">
+            <ConditionallyRender
+              ifTrue={this.state.showChatBot}
+              show={ <BotApp />
+            }
+            />
+          </div>
+          <button
+            className="app-chatbot-button">
+            <img
+              className="logo"
+              src={logo}
+             onClick={this.handleBotClick}/>
+          </button>
         </div>
     </HashRouter>
+
 )  };
 }
 

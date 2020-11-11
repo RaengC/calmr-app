@@ -19,6 +19,7 @@ handleChange = (event) => {
   };
 handleSubmit = (event) => {
     event.preventDefault()
+//debugger;
     const {name, email, password, password_confirmation} = this.state
     let user = {
       name: name,
@@ -28,8 +29,11 @@ handleSubmit = (event) => {
     }
 axios.post('http://localhost:3000/users', {user}, {withCredentials: true})
     .then(response => {
-      if (response.data.status === 'created') {
+     debugger;
+      if (response.data.status === "created") {
+
         this.props.handleLogin(response.data)
+
         this.redirect()
       } else {
         this.setState({
