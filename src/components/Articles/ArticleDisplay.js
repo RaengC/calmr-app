@@ -10,6 +10,8 @@ import config from '../ChatBot/config'
 
 import './Articles.css';
 
+const SERVER_URL = "http://localhost:3000/articles.json"
+
 class ArticleDisplay extends Component {
   constructor(props) {
     super(props)
@@ -27,6 +29,9 @@ class ArticleDisplay extends Component {
     console.log(results)
   }
 
+  savePodcast(response) {
+    axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original})
+  }
 
 
   render() {
@@ -37,7 +42,6 @@ class ArticleDisplay extends Component {
     }
     return (
       <div className='player-wrapper'>
-        <p>
         {this.props.onSubmit.title_original}
           <ReactPlayer
           className='react-player'
@@ -48,7 +52,9 @@ class ArticleDisplay extends Component {
           controls={true}
           />
         <img src={image}></img>
-        </p>
+        <form>
+          <input type="submit" value="Save Podcast" />
+        </form>
       </div>
 
     )
