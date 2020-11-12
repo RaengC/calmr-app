@@ -156,7 +156,7 @@ class App extends Component {
                 <Route path="/podcast">
                   <Article user={this.state.user}/>
                 </Route>
-                <Route path="/podcastSaved">
+                <Route path="/SavedArticles">
                   <SavedArticles />
                 </Route>
                 <Route path='/about'>

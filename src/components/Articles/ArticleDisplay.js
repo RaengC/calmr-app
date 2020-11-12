@@ -9,7 +9,7 @@ import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
 import './Articles.css';
 
-const user_id = 9
+const user_id = 10
 
 const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
 
@@ -40,12 +40,11 @@ class ArticleDisplay extends Component {
   }
 
   savePodcast(response) {
-    axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original, user_id: this.props.user.id})
+    axios.post(SERVER_URL, {link: this.props.onSubmit.audio, name: this.props.onSubmit.title_original})
   }
 
   render() {
     console.log("props onSubmit", this.props.onSubmit)
-    console.log("props user", this.props.user_id)
 
     const image = this.props.onSubmit.thumbnail
     if (this.props.onSubmit.length == 0) {
