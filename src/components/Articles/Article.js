@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
+import {Redirect} from 'react-router-dom';
 import ArticleDisplay from './ArticleDisplay'
 import ArticleForm from './ArticleForm'
 import unirest from 'unirest'
-
-
-
 
 class Article extends Component {
   constructor(){
@@ -26,28 +24,26 @@ class Article extends Component {
         results = results.toJSON()
         results.body.results.map((result) => (
         this.setState({searchResults: result})
-
       ))
-
       })
-
     }
 
     // new function to onClick to calming music
 
-
     passResultsToDisplay(props) {
       this.props.onSubmit(this.state.searchResults)
     }
-// api call there - podcast api
 
   render() {
 
     return (
         <div>
-        <ArticleForm onSubmit={this.listenNotes}/>
-        <ArticleDisplay onSubmit={this.state.searchResults} />
-
+        <ArticleForm
+          onSubmit={this.listenNotes}
+          />
+        <ArticleDisplay
+          onSubmit={this.state.searchResults}
+          />
       </div>
     )
   }
