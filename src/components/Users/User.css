@@ -1,0 +1,15 @@
+.login-menu {
+  font-size: 32px;
+}
+
+.links {
+  color: white;
+}
+
+.links:hover {
+  color: blue;
+}
+
+.registration-pages {
+  font-size: 24px;
+}

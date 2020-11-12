@@ -2,3 +2,11 @@
 .logo{
   height: 17px;
 }
+
+.homeInfo, .aboutInfo {
+  color: black;
+}
+
+.homeInfo {
+  font-size: 20px;
+}

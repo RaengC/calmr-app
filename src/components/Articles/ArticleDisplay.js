@@ -70,10 +70,6 @@ class ArticleDisplay extends Component {
           <button type="submit" value="Save Podcast" placeholder="button to save podcast">Save Podcast</button>
         </form>
         </div>
-<<<<<<< HEAD
-=======
-        
->>>>>>> 9874d52af67d41402a666514caec142e1892ea64
       </div>
 
     )

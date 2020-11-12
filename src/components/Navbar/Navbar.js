@@ -10,7 +10,6 @@ export const Navbar = ({ onClick, toggle }) => {
           <NavLink onClick={onClick} to='/podcast'>Search for Podcast</NavLink>
           <NavLink onClick={onClick} to='/savedarticles'>Saved Podcasts</NavLink>
           <NavLink onClick={onClick} to='/login'>Your Account</NavLink>
-          <NavLink onClick={onClick} to='/user/edit'>Update Profile</NavLink>
           <NavLink onClick={onClick} to='/about'>About</NavLink>
         </ul>
       </div>

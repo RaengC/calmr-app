@@ -15,7 +15,7 @@ class MessageParser {
     let checkBreathing =["breathing", "breath", "breathe"];
     let checkCreative =["creative outlets", "create", "art", "creative"];
     let checkAnxiety =["anxiety", "stress", "anxious", "stress help"];
-    let checkEmergency =["suicide", "in trouble", "emergency", "000", "911"]
+    let checkEmergency =["help", "suicide", "in trouble", "emergency", "000", "911"]
 
     if (lowerCase.includes("hello")) {
       return this.actionProvider.greet();

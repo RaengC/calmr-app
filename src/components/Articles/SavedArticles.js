@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import axios from 'axios'
 
+import './Articles.css'
+
 const SERVER_URL = 'http://localhost:3000/users/9/articles.json'
 
 class SavedArticles extends Component {
@@ -22,15 +24,16 @@ class SavedArticles extends Component {
   render () {
     return (
       <div>
-        <h1>Saved Articles</h1>
+        <h1>Your Saved Podcasts</h1>
           {this.state.articles.map((article) =>
-            <div>
+            <div className="saved-podcasts">
+              <br></br>
             <p>{article.name}</p>
-          <ReactPlayer
-          url={article.link}
-          playing={false}
-          controls={true}
-          className="display-player"/>
+            <ReactPlayer
+            url={article.link}
+            playing={false}
+            controls={true}
+            className="display-player"/>
           </div>)}
       </div>
     )

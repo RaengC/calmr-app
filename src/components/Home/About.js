@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class About extends Component {
   render() {
     return (
-      <div>
+      <div className="aboutInfo">
         <h2>About Calmr</h2>
           <p>Calmr is a group project designed to facilitate team work and group learning in the General Assembly Software Engineering Immersive course. </p>
           <p>The project was designed and constructed by the students involved, <a href="https://github.com/brittanylcrocker" target="_blank">Brittany Crocker,</a> <a href="https://github.com/Giti-mafakheri" target="_blank">Giti Mafakheri</a>,  <a href="https://github.com/lightgreener" target="_blank">Henry Zhang</a> and <a href="https://github.com/RaengC" target="_blank">Raeng Castagna.</a>  </p>

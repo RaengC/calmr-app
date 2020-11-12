@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(19, 56, 166);
+    border: 2px solid rgb(43 152 236);
     list-style: none;
     text-decoration: none;
     color:  rgb(19, 56, 166);
@@ -48,7 +48,7 @@
 }
 .nav-bar a:hover
 {
-    background-color: rgb(19, 56, 166);
+    background-color: rgb(43 152 236);
     color: #fff;
 }
 
@@ -61,8 +61,8 @@
     left: 3rem;
     width: 3rem;
     height: 3rem;
-    background-color: rgb(19, 56, 166);
-    border: 2px solid rgb(19, 56, 166);
+    background-color: rgb(43 152 236);
+    border: 2px solid rgb(43 152 236);
     border-radius: 50%;
     align-items: center;
     z-index: 1;
@@ -87,7 +87,7 @@
 }
 .toggle-menu-btn:hover::after
 {
-    background-color: rgb(19, 56, 166);
+    background-color: rgb(43 152 236);
     top: .5rem;
     left: .5rem;
     right: .5rem;
@@ -115,7 +115,7 @@
 }
 .active-menu-btn::after
 {
-    background-color: rgb(19, 56, 166);
+    background-color: rgb(43 152 236);
     top: .3rem;
     left: .3rem;
     right: .3rem;

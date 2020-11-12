@@ -65,8 +65,8 @@ class Login extends Component {
   }
   render() {
     const {name, email, password} = this.state
-  return (
-      <div>
+    return (
+      <div className="registration-pages">
         <h1>Log In</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -90,11 +90,17 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button placeholder="submit" type="submit">
-            Log In
+          <button
+            placeholder="submit"
+            type="submit"
+            input="login button"
+            >Log In
           </button>
           <div>
-            or <Link to='/signup'>sign up</Link>
+            or <br></br>
+            <Link
+              to='/signup'
+              className="links">Create a New Account</Link>
           </div>
 
           </form>

@@ -175,11 +175,12 @@ class App extends Component {
             />
           </div>
           <button
-            className="app-chatbot-button">
+            className="app-chatbot-button"
+            aria-label="open chatbot by clicking button">
             <img
               className="logo"
               src={logo}
-            alt="lotus flower image"
+              alt="lotus flower image"
              onClick={this.handleBotClick}/>
           </button>
         </div>
