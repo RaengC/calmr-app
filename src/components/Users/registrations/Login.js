@@ -14,20 +14,22 @@ class Login extends Component {
   componentWillMount() {
     return this.props.loggedInStatus ? this.redirect() : null
   }
-handleChange = (event) => {
-    const {name, value} = event.target
-    this.setState({
-      [name]: value
-    })
-  };
-handleSubmit = (event) => {
+
+  handleChange = (event) => {
+      const {name, value} = event.target
+      this.setState({
+        [name]: value
+      })
+    };
+
+  handleSubmit = (event) => {
     event.preventDefault()
     const {name, email, password} = this.state
-let user = {
-      name: name,
-      email: email,
-      password: password
-    }
+    let user = {
+          name: name,
+          email: email,
+          password: password
+        }
 
     axios.post('http://localhost:3000/login', {user}, {withCredentials: true})
     .then(response => {
@@ -42,10 +44,12 @@ let user = {
     })
     .catch(error => console.log('api errors:', error))
   };
-redirect = () => {
-    this.props.history.push('/')
-  }
-handleErrors = () => {
+
+  redirect = () => {
+      this.props.history.push('/')
+    }
+
+  handleErrors = () => {
     return (
       <div>
         <ul>
@@ -57,9 +61,9 @@ handleErrors = () => {
       </div>
     )
   }
-render() {
+  render() {
     const {name, email, password} = this.state
-return (
+  return (
       <div>
         <h1>Log In</h1>
         <form onSubmit={this.handleSubmit}>

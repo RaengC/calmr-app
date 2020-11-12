@@ -6,12 +6,12 @@ export const Navbar = ({ onClick, toggle }) => {
     <HashRouter>
       <div className={`slide-menu ${ toggle ? 'slide-in' : 'slide-out'}`}>
         <ul className="nav-bar">
-          <NavLink onClick={onClick} to='/about'>Home</NavLink>
+          <NavLink onClick={onClick} to='/home'>Home</NavLink>
           <NavLink onClick={onClick} to='/article'>Search for Podcast</NavLink>
           <NavLink onClick={onClick} to='/savedarticles'>Saved Podcasts</NavLink>
           <NavLink onClick={onClick} to='/login'>Your Account</NavLink>
           <NavLink onClick={onClick} to='/user/edit'>Update Profile</NavLink>
-
+          <NavLink onClick={onClick} to='/about'>About</NavLink>
         </ul>
       </div>
     </HashRouter>

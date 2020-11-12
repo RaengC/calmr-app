@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
-import './About.css';
+import './Home.css';
 import logo from "../Assets/lotus-flower.png";
 
-class About extends Component {
+class Home extends Component {
+
   render() {
     return (
       <div class="aboutInfo">
@@ -20,4 +21,4 @@ class About extends Component {
   }
 };
 
-export default About;
+export default Home;

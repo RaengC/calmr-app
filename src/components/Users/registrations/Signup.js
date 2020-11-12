@@ -29,7 +29,7 @@ handleSubmit = (event) => {
     }
 axios.post('http://localhost:3000/users', {user}, {withCredentials: true})
     .then(response => {
-     debugger;
+     // debugger;
       if (response.data.status === "created") {
 
         this.props.handleLogin(response.data)
@@ -55,6 +55,7 @@ handleErrors = () => {
       </div>
     )
   }
+  
 render() {
     const {name, email, password, password_confirmation} = this.state
 return (
