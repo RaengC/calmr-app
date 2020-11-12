@@ -17,7 +17,6 @@ class Article extends Component {
     this.passResultsToDisplay = this.passResultsToDisplay.bind(this)
   }
 
-
     listenNotes = async (query) => {
       this.setState({query: query})
       console.log(this.state.query)
@@ -32,6 +31,7 @@ class Article extends Component {
       })
     }
 
+    // new function to onClick to calming music
 
 
     passResultsToDisplay(props) {

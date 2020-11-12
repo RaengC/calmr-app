@@ -20,7 +20,8 @@ import SavedArticles from  './Articles/SavedArticles';
 import ArticleForm from './Articles/ArticleForm'
 import Registration from   './Users/auth/Registration'
 import UserHome from './Users/UserHome'
-import About from './Journal/About'
+import Home from './Home/Home'
+import About from './Home/About'
 import Login from './Users/registrations/Login'
 import Logout from './Users/registrations/Logout'
 import Signup from './Users/registrations/Signup'
@@ -68,6 +69,7 @@ class App extends Component {
           })
           //debugger;
         }
+
       handleLogout = () => {
           this.setState({
           isLoggedIn: false,
@@ -75,6 +77,7 @@ class App extends Component {
           })
           return '';
         }
+
         handleBotClick=()=>{
           this.setState({
             showChatBot: !this.state.showChatBot
@@ -83,21 +86,16 @@ class App extends Component {
 //  const [showChatBot, toggleChatbot] = useState(false);
 
   render() {
-
-
-
   return (
     <HashRouter className="container">
 
       <Menu />
         <div className="header-box">
-
           <img
             className="header-logo"
             src={logo}
             alt="lotus flower image"
             />
-
           <h1 className="header">Calmr</h1>
         </div>
 
@@ -107,40 +105,36 @@ class App extends Component {
               renders the first one that matches the current URL. */}
 
               <Switch>
-
                 <Route
                   exact path='/login'
                   render={props => (
-                  <UserHome {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}
-
+                    <UserHome {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}
                     />
                   )}
                 />
                 <Route
                   exact path='/login/login'
                   render={props => (
-                  <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+                    <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
                   )}
                 />
 
                 <Route
                   exact path='/logout'
-
                 />
-
 
                 <Route
                   exact path='/signup'
                   render={props => (
-                  <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+                    <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
                   )}
                     />
 
                 <Route path="/createAccount">
                   <Registration />
                 </Route>
-                <Route path="/about">
-                  <About />
+                <Route path="/home">
+                  <Home />
                 </Route>
                 <Route path="/articleDisplay">
                   <ArticleDisplay />
@@ -154,12 +148,11 @@ class App extends Component {
                 <Route path="/savedarticles">
                   <SavedArticles />
                 </Route>
-    
+                <Route path='/about'>
                   <About />
+                </Route>
                 <Route path="/">
-
-                  <About />
-
+                  <Home />
                 </Route>
               </Switch>
           </div>
