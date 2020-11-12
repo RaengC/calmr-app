@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import axios from 'axios'
 
-const SERVER_URL = 'http://localhost:3000/articles.json'
+const SERVER_URL = 'http://localhost:3000/users/9/articles.json'
 
 class SavedArticles extends Component {
   constructor (props) {
