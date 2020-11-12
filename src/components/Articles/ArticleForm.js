@@ -22,10 +22,14 @@ class ArticleForm extends Component {
         // go and get images . should show at page
         console.log('about to search for', this.state.query);
         this.props.onSubmit( this.state.query ); //call the event handler provied by parents
+
+        // TODO fix the below, currently not working
+        this.setState({query: ''}); // clear the input after search
     }
     _handleInput(event){
         // console.log(event.target.value);
         this.setState({query: event.target.value});
+
     }
 
     render() {
