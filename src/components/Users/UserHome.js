@@ -17,11 +17,14 @@ return (
       <br></br>
       <Link to='/signup'>Sign Up</Link>
       <br></br>
+        <Link to='/EditProfile'>Edit Profile</Link>
+        <br></br>
       {
         props.loggedInStatus ?
         <Link to='/logout' onClick={handleClick}>Log Out</Link> :
         null
       }
+
     </div>
   );
 };
