@@ -28,16 +28,15 @@ class Article extends Component {
         results.body.results.map((result) => (
         this.setState({searchResults: result})
 
-      ))
-
+        ))
       })
-
     }
 
 
 
     passResultsToDisplay(props) {
       this.props.onSubmit(this.state.searchResults)
+
     }
 // api call there - podcast api
 

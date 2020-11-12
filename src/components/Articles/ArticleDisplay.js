@@ -3,7 +3,7 @@ import axios from 'axios';
 import Article from './Article'
 import DisplayComments from './DisplayComments'
 import ReactPlayer from 'react-player'
-
+import ArticleForm from './ArticleForm'
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
@@ -37,6 +37,7 @@ class ArticleDisplay extends Component {
     }
     return (
       <div className='player-wrapper'>
+          <p>Title : { this.props.onSubmit.title_original } </p>
         <p>
         {this.props.onSubmit.title_original}
           <ReactPlayer
@@ -48,6 +49,7 @@ class ArticleDisplay extends Component {
           controls={true}
           />
         <img src={image}></img>
+
         </p>
       </div>
 
