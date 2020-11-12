@@ -23,6 +23,7 @@ class ArticleDisplay extends Component {
     }
     this.savePodcast = this.savePodcast.bind(this)
     this.displayResults = this.displayResults.bind(this)
+    this.userDetails = this.userDetails.bind(this)
   }
 
   displayResults(results) {
@@ -69,7 +70,6 @@ class ArticleDisplay extends Component {
           <button type="submit" value="Save Podcast" placeholder="button to save podcast">Save Podcast</button>
         </form>
         </div>
-        // <p>{this.props.user}</p>
       </div>
 
     )

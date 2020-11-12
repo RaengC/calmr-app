@@ -36,7 +36,6 @@ class Login extends Component {
 
 
       if (response.data.logged_in) {
-        debugger;
         this.props.handleLogin(response.data)
         this.redirect()
       } else {
