@@ -9,8 +9,9 @@ import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
 
 import './Articles.css';
+const user_id = 9
+const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
 
-const SERVER_URL = "http://localhost:3000/articles.json"
 
 class ArticleDisplay extends Component {
   constructor(props) {
@@ -19,8 +20,7 @@ class ArticleDisplay extends Component {
       href: '',
       searchResults: [],
     }
-
-
+    this.savePodcast = this.savePodcast.bind(this)
     this.displayResults = this.displayResults.bind(this)
   }
 
@@ -30,7 +30,7 @@ class ArticleDisplay extends Component {
   }
 
   savePodcast(response) {
-    axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original})
+    axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original, user_id: 9})
   }
 
 
@@ -41,20 +41,19 @@ class ArticleDisplay extends Component {
       return false
     }
     return (
-      <div className='player-wrapper'>
+      <div >
         {this.props.onSubmit.title_original}
           <ReactPlayer
-          className='react-player'
           url={this.props.onSubmit.audio}
-          width='100%'
-          height='100%'
           playing={false}
           controls={true}
           />
         <img src={image}></img>
-        <form>
+        <div>
+        <form onSubmit={this.savePodcast}>
           <input type="submit" value="Save Podcast" />
         </form>
+        </div>
       </div>
 
     )
