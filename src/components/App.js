@@ -41,7 +41,7 @@ class App extends Component {
     this.state = {
       isLoggedIn: false,
       user: {},
-      showChatBot: false
+      showChatBot: true
      };
      this.handleLogout=this.handleLogout.bind(this)
      this.handleLogin = this.handleLogin.bind(this)

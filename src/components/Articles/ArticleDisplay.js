@@ -9,7 +9,7 @@ import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
 import './Articles.css';
 
-const user_id = 14
+const user_id = 10
 
 const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
 
@@ -69,7 +69,7 @@ class ArticleDisplay extends Component {
           <button type="submit" value="Save Podcast" placeholder="button to save podcast">Save Podcast</button>
         </form>
         </div>
-        // <p>{this.props.user}</p>
+        
       </div>
 
     )
