@@ -24,7 +24,8 @@ class Article extends Component {
         results = results.toJSON()
         results.body.results.map((result) => (
         this.setState({searchResults: result})
-      ))
+
+        ))
       })
     }
 
@@ -32,12 +33,13 @@ class Article extends Component {
 
     passResultsToDisplay(props) {
       this.props.onSubmit(this.state.searchResults)
+
     }
 
   render() {
 
     return (
-        <div>
+        <div className="container">
         <ArticleForm
           onSubmit={this.listenNotes}
           />

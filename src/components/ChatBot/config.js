@@ -19,7 +19,7 @@ const config = {
 
   initialMessages: [
     createChatBotMessage(
-      `Hi, I'm ${botName}. I'm here to help you nagivate this site.`
+      `Hi, I'm ${botName}. I'm here to give you some video resources to help you feel calmer.`
     ),
     createChatBotMessage(
       `What would you like help with?`,

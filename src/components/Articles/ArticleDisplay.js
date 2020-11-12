@@ -3,12 +3,12 @@ import axios from 'axios';
 import Article from './Article'
 import DisplayComments from './DisplayComments'
 import ReactPlayer from 'react-player'
-
+import ArticleForm from './ArticleForm'
 import OptionsMarkup from '../ChatBot/WidgetsList/OptionsMarkup';
 import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
-
 import './Articles.css';
+
 const user_id = 9
 
 const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
@@ -42,17 +42,22 @@ class ArticleDisplay extends Component {
       return false
     }
     return (
-      <div >
-        {this.props.onSubmit.title_original}
+      <div className="podcast-content">
+        <h2>
+          {this.props.onSubmit.title_original}
+        </h2>
+          <img src={image} className="podcast-img"></img>
+        <div >
           <ReactPlayer
-          url={this.props.onSubmit.audio}
-          playing={false}
-          controls={true}
-          />
-        <img src={image}></img>
+            url={this.props.onSubmit.audio}
+            playing={false}
+            controls={true}
+            className="display-player"
+            />
+        </div>
         <div>
         <form onSubmit={this.savePodcast}>
-          <input type="submit" value="Save Podcast" />
+          <button type="submit" value="Save Podcast" placeholder="button to save podcast">Save Podcast</button>
         </form>
         </div>
         // <p>{this.props.user}</p>

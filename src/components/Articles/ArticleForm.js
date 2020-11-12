@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import unirest from 'unirest'
-import Article from './Article'
-import ArticleDisplay from './ArticleDisplay'
-import ReactPlayer from 'react-player'
+// import unirest from 'unirest'
+// import Article from './Article'
+// import ArticleDisplay from './ArticleDisplay'
+// import ReactPlayer from 'react-player'
 
 class ArticleForm extends Component {
     constructor(){
@@ -14,7 +14,7 @@ class ArticleForm extends Component {
         this._handleInput = this._handleInput.bind(this)
         this._handleSubmit = this._handleSubmit.bind(this)
         // this._handleOnClick = this._handleOnClick.bind(this)
-        this.listenNotes_calmr = this.listenNotes_calmr.bind(this)
+        // this.listenNotes_calmr = this.listenNotes_calmr.bind(this)
     }
     _handleSubmit(event){
         event.preventDefault();
@@ -27,42 +27,20 @@ class ArticleForm extends Component {
         // console.log(event.target.value);
         this.setState({query: event.target.value});
     }
-    // function
-    // _handleOnClick(event){
-        // console.log("work");
-        listenNotes_calmr = async (query) => {
 
-        const response = await unirest.get(`https://listen-api.listennotes.com/api/v2/search?q=starwars&sort_by_date=0&type=episode&offset=0&len_min=10&len_max=30&genre_ids=68%2C82&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0`)
-          .header('X-ListenAPI-Key', 'c553d29fdd154bc3a22678b4f2f3350d').then((results) => {
-
-            console.log("JSON", results.toJSON())
-            results = results.toJSON()
-
-            results.body.results.map((result) => (
-              this.setState({audio: result.audio})
-              ))
-          })
-        }
-        render()   {
-        return (
+    render() {
+      return (
+        <div >
+          <h2> Search for a podcast by entering your search criteria.</h2>
+          <br></br>
             <div>
-             <h2> To search for a podcast enter your search criteria below</h2>
-              <form onSubmit={ this._handleSubmit}>
-                  <input type="search" placeholder="search podcast" required onInput={this._handleInput}/><br></br>
-                  <input type="submit" value="Search"/>
+              <form onSubmit={ this._handleSubmit} className="podcast-form">
+                <input type="search" placeholder="search podcast" required onInput={this._handleInput}/>
+                <button type="submit" value="Search" placeholder="search button for podcast">Search for podcast</button>
               </form>
-
-              <button onClick={ this.listenNotes_calmr }>Calmr Music</button>
-
-              <div>
-                <ReactPlayer
-                url={this.state.audio}
-                playing={false}
-                controls={true}
-                />
-              </div>
-
             </div>
+
+          </div>
         )
     }
 }
