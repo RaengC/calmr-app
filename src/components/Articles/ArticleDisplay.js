@@ -29,6 +29,16 @@ class ArticleDisplay extends Component {
     console.log(results)
   }
 
+  userDetails = () => {
+    axios.get('http://localhost:3000/logged_in').then(response => {
+      console.log('response', response)
+    })
+  }
+
+  componentDidMount(){
+    this.userDetails()
+  }
+
   savePodcast(response) {
     axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original, user_id: this.props.user.id})
   }
