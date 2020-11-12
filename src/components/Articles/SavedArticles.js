@@ -4,7 +4,8 @@ import axios from 'axios'
 
 import './Articles.css'
 
-const SERVER_URL = 'http://localhost:3000/users/9/articles.json'
+const SERVER_URL = 'https://calmr.herokuapp.com/users/4/articles.json'
+
 
 class SavedArticles extends Component {
   constructor (props) {
