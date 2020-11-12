@@ -26,6 +26,11 @@ class BreathingWidget extends Component {
       text: "Mindful Breathing",
       url: "https://youtu.be/nmFUDkj1Aq0",
       id: 4,
+    },
+    {
+      text: "Breathe in, Breathe Out",
+      url: "https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif",
+      id: 5,
     }]
   }
   }
