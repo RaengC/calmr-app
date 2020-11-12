@@ -9,7 +9,7 @@ import MeditationWidget from '../ChatBot/Widgets/MeditationWidget';
 import config from '../ChatBot/config'
 import './Articles.css';
 
-const user_id = 10
+const user_id = 14
 
 const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
 

@@ -23,8 +23,15 @@ class SavedArticles extends Component {
     return (
       <div>
         <h1>Saved Articles</h1>
-          {this.state.articles.map((article) =>  <p><a target="_blank" href={article.link}>{article.name}</a>
-          <ReactPlayer url={article.link} /></p>)}
+          {this.state.articles.map((article) =>
+            <div>
+            <p>{article.name}</p>
+          <ReactPlayer
+          url={article.link}
+          playing={false}
+          controls={true}
+          className="display-player"/>
+          </div>)}
       </div>
     )
   }
