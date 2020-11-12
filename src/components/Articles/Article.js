@@ -43,6 +43,7 @@ class Article extends Component {
           />
         <ArticleDisplay
           onSubmit={this.state.searchResults}
+          user={this.props.user}
           />
       </div>
     )

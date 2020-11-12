@@ -10,6 +10,7 @@ import config from '../ChatBot/config'
 
 import './Articles.css';
 const user_id = 9
+
 const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
 
 
@@ -24,18 +25,18 @@ class ArticleDisplay extends Component {
     this.displayResults = this.displayResults.bind(this)
   }
 
-
   displayResults(results) {
     console.log(results)
   }
 
   savePodcast(response) {
-    axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original, user_id: 9})
+    axios.post(SERVER_URL, {link: this.props.onSubmit, name: this.props.onSubmit.title_original, user_id: this.props.user.id})
   }
 
-
   render() {
-    console.log("props", this.props.onSubmit)
+    console.log("props onSubmit", this.props.onSubmit)
+    console.log("props user", this.props.user_id)
+
     const image = this.props.onSubmit.thumbnail
     if (this.props.onSubmit.length == 0) {
       return false
@@ -54,6 +55,7 @@ class ArticleDisplay extends Component {
           <input type="submit" value="Save Podcast" />
         </form>
         </div>
+        // <p>{this.props.user}</p>
       </div>
 
     )
