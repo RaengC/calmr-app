@@ -23,7 +23,7 @@ import UserHome from './Users/UserHome'
 import Home from './Home/Home'
 import About from './Home/About'
 import Login from './Users/registrations/Login'
-import Logout from './Users/registrations/Logout'
+import EditProfile from './Users/registrations/EditProfile'
 import Signup from './Users/registrations/Signup'
 import axios from 'axios';
 
@@ -44,6 +44,8 @@ class App extends Component {
       showChatBot: false
      };
      this.handleLogout=this.handleLogout.bind(this)
+     this.handleLogin = this.handleLogin.bind(this)
+     this.loginStatus = this.loginStatus.bind(this)
   }
   componentDidMount() {
       this.loginStatus()
@@ -52,9 +54,10 @@ class App extends Component {
         axios.get('http://localhost:3000/logged_in', {withCredentials: true})
         .then(response => {
 
-
           if (response.data.logged_in) {
+
             this.handleLogin(response)
+
           } else {
             this.handleLogout()
           }
@@ -63,11 +66,12 @@ class App extends Component {
       }
 
       handleLogin = (data) => {
+        //debugger;
           this.setState({
             isLoggedIn: true,
             user: data.user
           })
-          //debugger;
+
         }
 
       handleLogout = () => {
@@ -119,9 +123,7 @@ class App extends Component {
                   )}
                 />
 
-                <Route
-                  exact path='/logout'
-                />
+
 
                 <Route
                   exact path='/signup'
@@ -129,6 +131,15 @@ class App extends Component {
                     <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
                   )}
                     />
+
+
+                    <Route
+                      exact path='/EditProfile'
+                      render={props => (
+                        <EditProfile {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}
+                        user={this.state.user}/>
+                      )}
+                        />
 
                 <Route path="/createAccount">
                   <Registration />
