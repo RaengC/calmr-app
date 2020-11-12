@@ -10,9 +10,6 @@ class OptionsMarkup extends Component {
     }
 
     }
-
-
-
     render(){
       return(
         this.props.options.map((option) => (

@@ -37,7 +37,7 @@ class Article extends Component {
   render() {
 
     return (
-        <div>
+        <div className="container">
         <ArticleForm
           onSubmit={this.listenNotes}
           />

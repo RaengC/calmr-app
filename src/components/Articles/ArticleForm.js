@@ -24,17 +24,20 @@ class ArticleForm extends Component {
         // console.log(event.target.value);
         this.setState({query: event.target.value});
     }
-    render() {
-        return (
-            <div>
-             <h2> To search for a podcast enter your search criteria below</h2>
-              <form onSubmit={ this._handleSubmit}>
-                  <input type="search" placeholder="search podcast" required onInput={this._handleInput}/><br></br>
-                  <input type="submit" value="Search"/>
-              </form>
 
-              // add calm music button here, with predetermined choice
+    render() {
+      return (
+        <div >
+          <h2> Search for a podcast by entering your search criteria.</h2>
+          <br></br>
+            <div>
+              <form onSubmit={ this._handleSubmit} className="podcast-form">
+                <input type="search" placeholder="search podcast" required onInput={this._handleInput}/>
+                <button type="submit" value="Search" placeholder="search button for podcast">Search for podcast</button>
+              </form>
             </div>
+
+          </div>
         )
     }
 }

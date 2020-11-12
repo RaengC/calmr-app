@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
 .comment-li {
   list-style-type: none;
 }
@@ -10,4 +14,29 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.podcast-img {
+  height: 150px;
+  width: 150px;
+}
+
+.podcast-content {
+  text-align: center;
+}
+
+.podcast-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+button {
+  padding: 7px;
+}
+
+/* !important used only as style is imported from API, couuld not change any other way (this is not good practice)*/
+.display-player {
+  height: 50px !important;
+  width: 300px !important;
 }
