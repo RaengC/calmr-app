@@ -44,6 +44,8 @@ class App extends Component {
       showChatBot: false
      };
      this.handleLogout=this.handleLogout.bind(this)
+     this.handleLogin = this.handleLogin.bind(this)
+     this.loginStatus = this.loginStatus.bind(this)
   }
   componentDidMount() {
       this.loginStatus()
@@ -52,9 +54,10 @@ class App extends Component {
         axios.get('http://localhost:3000/logged_in', {withCredentials: true})
         .then(response => {
 
-
           if (response.data.logged_in) {
+
             this.handleLogin(response)
+
           } else {
             this.handleLogout()
           }
@@ -67,7 +70,6 @@ class App extends Component {
             isLoggedIn: true,
             user: data.user
           })
-          //debugger;
         }
 
       handleLogout = () => {
