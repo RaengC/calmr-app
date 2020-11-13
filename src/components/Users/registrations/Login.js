@@ -31,11 +31,12 @@ class Login extends Component {
           password: password
         }
 
-    axios.post('https://calmr.herokuapp.com/login', {user}, {withCredentials: true})
+    axios.post('http://localhost:3000/login', {user}, {withCredentials: true})
     .then(response => {
 
 
       if (response.data.logged_in) {
+
         this.props.handleLogin(response.data)
         this.redirect()
       } else {
@@ -65,8 +66,8 @@ class Login extends Component {
   }
   render() {
     const {name, email, password} = this.state
-    return (
-      <div className="registration-pages">
+  return (
+      <div>
         <h1>Log In</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -90,17 +91,11 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button
-            placeholder="submit"
-            type="submit"
-            input="login button"
-            >Log In
+          <button placeholder="submit" type="submit">
+            Log In
           </button>
           <div>
-            or <br></br>
-            <Link
-              to='/signup'
-              className="links">Create a New Account</Link>
+            or <Link to='/signup'>sign up</Link>
           </div>
 
           </form>

@@ -27,7 +27,7 @@ handleSubmit = (event) => {
       password: password,
       password_confirmation: password_confirmation
     }
-axios.post('https://calmr.herokuapp.com/users', {user}, {withCredentials: true})
+axios.post('http://localhost:3000/users', {user}, {withCredentials: true})
     .then(response => {
      // debugger;
       if (response.data.status === "created") {
@@ -59,7 +59,7 @@ handleErrors = () => {
 render() {
     const {name, email, password, password_confirmation} = this.state
 return (
-      <div className="registration-pages">
+      <div>
         <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -90,11 +90,8 @@ return (
             value={password_confirmation}
             onChange={this.handleChange}
           />
-        
-          <button
-            placeholder="submit"
-            type="submit"
-            alt="sign up button">
+
+          <button placeholder="submit" type="submit">
             Sign Up
           </button>
 

@@ -51,7 +51,7 @@ class App extends Component {
       this.loginStatus()
     }
     loginStatus = () => {
-        axios.get('https://calmr.herokuapp.com/logged_in', {withCredentials: true})
+        axios.get('http://localhost:3000/logged_in', {withCredentials: true})
         .then(response => {
 
           if (response.data.logged_in) {
@@ -175,12 +175,11 @@ class App extends Component {
             />
           </div>
           <button
-            className="app-chatbot-button"
-            aria-label="open chatbot by clicking button">
+            className="app-chatbot-button">
             <img
               className="logo"
               src={logo}
-              alt="lotus flower image"
+            alt="lotus flower image"
              onClick={this.handleBotClick}/>
           </button>
         </div>
