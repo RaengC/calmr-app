@@ -14,7 +14,7 @@ class EditProfile extends Component {
 }
 handleSubmit=(event) =>{
   event.preventDefault();
-  debugger;
+  // debugger;
 }
   render () {
     if(!this.props.user){return ""}
