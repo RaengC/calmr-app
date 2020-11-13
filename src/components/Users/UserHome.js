@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+
+import './User.css'
+
 const UserHome = (props) => {
 const handleClick = () => {
     axios.delete('http://localhost:3000/logout', {withCredentials: true})
@@ -11,13 +14,12 @@ const handleClick = () => {
     .catch(error => console.log(error))
   }
 return (
-
-    <div>
-      <Link to='/login/login'>Log In</Link>
+  <div className="login-menu">
+    <Link to='/login/login' className="links" >Log In</Link>
       <br></br>
-      <Link to='/signup'>Sign Up</Link>
+    <Link to='/signup' className="links" >Sign Up</Link>
       <br></br>
-        <Link to='/EditProfile'>Edit Profile</Link>
+    <Link to='/EditProfile' className="links" >Edit Profile</Link>
         <br></br>
       {
         props.loggedInStatus ?
