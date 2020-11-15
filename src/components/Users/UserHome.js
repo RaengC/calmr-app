@@ -6,7 +6,7 @@ import './User.css'
 
 const UserHome = (props) => {
 const handleClick = () => {
-    axios.delete('http://localhost:3000/logout', {withCredentials: true})
+    axios.delete('http://polar-peak-06089.herokuapp.com/logout', {withCredentials: true})
     .then(response => {
       props.handleLogout()
       props.history.push('/')

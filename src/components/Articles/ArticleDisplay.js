@@ -11,7 +11,7 @@ import './Articles.css';
 
 const user_id = 10
 
-const SERVER_URL = `http://localhost:3000/users/${user_id}/articles.json`
+const SERVER_URL = `http://polar-peak-06089.herokuapp.com/users/${user_id}/articles.json`
 
 
 class ArticleDisplay extends Component {
@@ -31,7 +31,7 @@ class ArticleDisplay extends Component {
   }
 
   userDetails = () => {
-    axios.get('http://localhost:3000/logged_in').then(response => {
+    axios.get('http://polar-peak-06089.herokuapp.com/logged_in').then(response => {
       console.log('response', response)
     })
   }

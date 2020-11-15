@@ -27,7 +27,7 @@ handleSubmit = (event) => {
       password: password,
       password_confirmation: password_confirmation
     }
-axios.post('http://localhost:3000/users', {user}, {withCredentials: true})
+axios.post('http://polar-peak-06089.herokuapp.com/users', {user}, {withCredentials: true})
     .then(response => {
      // debugger;
       if (response.data.status === "created") {
